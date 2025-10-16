@@ -10,6 +10,7 @@ export default function Home() {
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedRestaurant, setSelectedRestaurant] = useState<Restaurant | null>(null);
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const [filters, setFilters] = useState<FilterState>({
     searchQuery: '',
     priceRanges: [],
@@ -18,6 +19,30 @@ export default function Home() {
     nearMe: false,
     openForLunch: false,
   });
+
+  // Initialize dark mode from system preference
+  useEffect(() => {
+    const isDark = localStorage.getItem('darkMode') === 'true' || 
+                   (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    setIsDarkMode(isDark);
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, []);
+
+  // Toggle dark mode
+  const toggleDarkMode = () => {
+    const newDarkMode = !isDarkMode;
+    setIsDarkMode(newDarkMode);
+    localStorage.setItem('darkMode', newDarkMode.toString());
+    if (newDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  };
 
   // Load restaurant data
   useEffect(() => {
@@ -44,9 +69,9 @@ export default function Home() {
     if (filters.searchQuery) {
       const query = filters.searchQuery.toLowerCase();
       filtered = filtered.filter(restaurant =>
-        restaurant.name.toLowerCase().includes(query) ||
-        restaurant.cuisine.toLowerCase().includes(query) ||
-        restaurant.description.toLowerCase().includes(query)
+        restaurant.name?.toLowerCase().includes(query) ||
+        restaurant.cuisine?.toLowerCase().includes(query) ||
+        restaurant.description?.toLowerCase().includes(query)
       );
     }
 
@@ -94,9 +119,32 @@ export default function Home() {
         });
     }
 
-    // Open for lunch filter (placeholder - will implement after seeing hours data)
+    // Open for lunch filter (12pm-2pm)
     if (filters.openForLunch) {
-      // TODO: Implement lunch hours filtering
+      filtered = filtered.filter(restaurant => {
+        if (!restaurant.opening_hours || !Array.isArray(restaurant.opening_hours)) {
+          return false;
+        }
+        
+        // Check if restaurant is open during lunch hours (12pm-2pm) on any day
+        return restaurant.opening_hours.some(period => {
+          if (!period.open || !period.close) return false;
+          
+          const openHour = period.open.hour;
+          const closeHour = period.close.hour;
+          const openMinute = period.open.minute || 0;
+          const closeMinute = period.close.minute || 0;
+          
+          // Convert to minutes for easier comparison
+          const openTime = openHour * 60 + openMinute;
+          const closeTime = closeHour * 60 + closeMinute;
+          const lunchStart = 12 * 60; // 12:00 PM
+          const lunchEnd = 14 * 60;   // 2:00 PM
+          
+          // Check if lunch hours (12pm-2pm) overlap with restaurant hours
+          return openTime <= lunchStart && closeTime >= lunchEnd;
+        });
+      });
     }
 
     return filtered;
@@ -126,16 +174,35 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b">
+      <header className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <h1 className="text-3xl font-bold text-gray-900">
-            NYT Top 100 NYC Restaurants
-          </h1>
-          <p className="mt-2 text-gray-600">
-            Discover and explore the best restaurants in New York City
-          </p>
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
+                NYT Top 100 NYC Restaurants
+              </h1>
+              <p className="mt-2 text-gray-700 dark:text-gray-300">
+                Discover and explore the best restaurants in New York City
+              </p>
+            </div>
+            <button
+              onClick={toggleDarkMode}
+              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+              aria-label="Toggle dark mode"
+            >
+              {isDarkMode ? (
+                <svg className="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clipRule="evenodd" />
+                </svg>
+              ) : (
+                <svg className="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
       </header>
 
@@ -164,7 +231,7 @@ export default function Home() {
               </div>
 
               {/* Restaurant List */}
-              <div className="h-96 xl:h-full overflow-hidden">
+              <div className="h-96 xl:h-[calc(100vh-200px)] overflow-hidden">
                 <RestaurantList
                   restaurants={filteredRestaurants}
                   selectedRestaurant={selectedRestaurant}

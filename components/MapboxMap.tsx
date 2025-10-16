@@ -60,7 +60,7 @@ export default function MapboxMap({ restaurants, selectedRestaurant, onRestauran
     restaurants.forEach(restaurant => {
       if (restaurant.latitude && restaurant.longitude) {
         const marker = new mapboxgl.Marker({
-          color: getMarkerColor(restaurant),
+          color: '#2563eb', // All markers same blue color
           scale: selectedRestaurant?.place_id === restaurant.place_id ? 1.2 : 1,
         })
           .setLngLat([restaurant.longitude, restaurant.latitude])
@@ -92,8 +92,8 @@ export default function MapboxMap({ restaurants, selectedRestaurant, onRestauran
       }
     });
 
-    // Fit map to show all markers
-    if (restaurants.length > 0 && restaurants.some(r => r.latitude && r.longitude)) {
+    // Fit map to show all markers (only if no restaurant is selected)
+    if (!selectedRestaurant && restaurants.length > 0 && restaurants.some(r => r.latitude && r.longitude)) {
       const bounds = new mapboxgl.LngLatBounds();
       restaurants.forEach(restaurant => {
         if (restaurant.latitude && restaurant.longitude) {
@@ -107,14 +107,32 @@ export default function MapboxMap({ restaurants, selectedRestaurant, onRestauran
     }
   }, [restaurants, mapLoaded, selectedRestaurant, onRestaurantSelect]);
 
-  // Get marker color based on price range
-  const getMarkerColor = (restaurant: Restaurant): string => {
-    const priceRange = restaurant.price_range;
-    if (priceRange.includes('$100+')) return '#dc2626'; // red
-    if (priceRange.includes('$50–100')) return '#ea580c'; // orange
-    if (priceRange.includes('$25–50')) return '#16a34a'; // green
-    return '#2563eb'; // blue (default)
-  };
+  // Handle zoom when restaurant is selected/deselected
+  useEffect(() => {
+    if (!map.current || !mapLoaded) return;
+
+    if (selectedRestaurant && selectedRestaurant.latitude && selectedRestaurant.longitude) {
+      // Zoom to selected restaurant
+      map.current.flyTo({
+        center: [selectedRestaurant.longitude, selectedRestaurant.latitude],
+        zoom: 16,
+        duration: 1000,
+      });
+    } else if (!selectedRestaurant && restaurants.length > 0) {
+      // Zoom back out to show all restaurants
+      const bounds = new mapboxgl.LngLatBounds();
+      restaurants.forEach(restaurant => {
+        if (restaurant.latitude && restaurant.longitude) {
+          bounds.extend([restaurant.longitude, restaurant.latitude]);
+        }
+      });
+      
+      if (!bounds.isEmpty()) {
+        map.current.fitBounds(bounds, { padding: 50, duration: 1000 });
+      }
+    }
+  }, [selectedRestaurant, restaurants, mapLoaded]);
+
 
   // Check if Mapbox token is configured
   const mapboxToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
@@ -122,21 +140,21 @@ export default function MapboxMap({ restaurants, selectedRestaurant, onRestauran
 
   if (!isTokenConfigured) {
     return (
-      <div className="w-full h-full rounded-lg overflow-hidden shadow-lg bg-gray-100 flex items-center justify-center">
+      <div className="w-full h-full rounded-lg overflow-hidden shadow-lg bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
         <div className="text-center p-6">
-          <div className="text-gray-400 mb-4">
+          <div className="text-gray-400 dark:text-gray-500 mb-4">
             <svg className="w-16 h-16 mx-auto" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
             </svg>
           </div>
-          <h3 className="text-lg font-medium text-gray-900 mb-2">Map Not Available</h3>
-          <p className="text-sm text-gray-600 mb-4">
+          <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">Map Not Available</h3>
+          <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
             Please configure your Mapbox access token to view the interactive map.
           </p>
-          <div className="text-xs text-gray-500 bg-gray-50 p-3 rounded">
-            <p>1. Get a free token from <a href="https://account.mapbox.com/access-tokens/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">mapbox.com</a></p>
-            <p>2. Create a <code className="bg-gray-200 px-1 rounded">.env.local</code> file in the app directory</p>
-            <p>3. Add: <code className="bg-gray-200 px-1 rounded">NEXT_PUBLIC_MAPBOX_TOKEN=your_token_here</code></p>
+          <div className="text-xs text-gray-500 dark:text-gray-400 bg-gray-50 dark:bg-gray-700 p-3 rounded">
+            <p>1. Get a free token from <a href="https://account.mapbox.com/access-tokens/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">mapbox.com</a></p>
+            <p>2. Create a <code className="bg-gray-200 dark:bg-gray-600 px-1 rounded">.env.local</code> file in the app directory</p>
+            <p>3. Add: <code className="bg-gray-200 dark:bg-gray-600 px-1 rounded">NEXT_PUBLIC_MAPBOX_TOKEN=your_token_here</code></p>
           </div>
         </div>
       </div>
@@ -147,10 +165,10 @@ export default function MapboxMap({ restaurants, selectedRestaurant, onRestauran
     <div className="w-full h-full rounded-lg overflow-hidden shadow-lg">
       <div ref={mapContainer} className="w-full h-full" />
       {!mapLoaded && (
-        <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-100 dark:bg-gray-800">
           <div className="text-center">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
-            <p className="mt-2 text-sm text-gray-600">Loading map...</p>
+            <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">Loading map...</p>
           </div>
         </div>
       )}

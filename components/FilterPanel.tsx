@@ -102,13 +102,13 @@ export default function FilterPanel({ filters, onFiltersChange, restaurants }: F
     filters.openForLunch;
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6 h-fit">
+    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 h-fit">
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-lg font-semibold text-gray-900">Filters</h2>
+        <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Filters</h2>
         {hasActiveFilters && (
           <button
             onClick={clearAllFilters}
-            className="text-sm text-blue-600 hover:text-blue-800 font-medium"
+            className="text-sm text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium"
           >
             Clear All
           </button>
@@ -118,7 +118,7 @@ export default function FilterPanel({ filters, onFiltersChange, restaurants }: F
       <div className="space-y-6">
         {/* Search */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
             Search
           </label>
           <input
@@ -126,25 +126,25 @@ export default function FilterPanel({ filters, onFiltersChange, restaurants }: F
             value={filters.searchQuery}
             onChange={(e) => handleSearchChange(e.target.value)}
             placeholder="Search restaurants..."
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
           />
         </div>
 
         {/* Price Range */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
             Price Range
           </label>
           <div className="space-y-2">
-            {priceRanges.map((priceRange) => (
-              <label key={priceRange} className="flex items-center">
+            {priceRanges.map((priceRange, index) => (
+              <label key={`price-${index}-${priceRange}`} className="flex items-center">
                 <input
                   type="checkbox"
                   checked={filters.priceRanges.includes(priceRange)}
                   onChange={() => handlePriceRangeToggle(priceRange)}
-                  className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                  className="rounded border-gray-300 dark:border-gray-600 text-blue-600 focus:ring-blue-500 bg-white dark:bg-gray-700"
                 />
-                <span className="ml-2 text-sm text-gray-700">{priceRange}</span>
+                <span className="ml-2 text-sm text-gray-700 dark:text-gray-300">{priceRange}</span>
               </label>
             ))}
           </div>
@@ -152,19 +152,19 @@ export default function FilterPanel({ filters, onFiltersChange, restaurants }: F
 
         {/* Cuisine */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
             Cuisine
           </label>
           <div className="space-y-2 max-h-40 overflow-y-auto">
-            {cuisines.map((cuisine) => (
-              <label key={cuisine} className="flex items-center">
+            {cuisines.map((cuisine, index) => (
+              <label key={`cuisine-${index}-${cuisine}`} className="flex items-center">
                 <input
                   type="checkbox"
                   checked={filters.cuisines.includes(cuisine)}
                   onChange={() => handleCuisineToggle(cuisine)}
-                  className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                  className="rounded border-gray-300 dark:border-gray-600 text-blue-600 focus:ring-blue-500 bg-white dark:bg-gray-700"
                 />
-                <span className="ml-2 text-sm text-gray-700">{cuisine}</span>
+                <span className="ml-2 text-sm text-gray-700 dark:text-gray-300">{cuisine}</span>
               </label>
             ))}
           </div>
@@ -173,19 +173,19 @@ export default function FilterPanel({ filters, onFiltersChange, restaurants }: F
         {/* Neighborhood */}
         {neighborhoods.length > 0 && (
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
               Neighborhood
             </label>
             <div className="space-y-2 max-h-40 overflow-y-auto">
-              {neighborhoods.map((neighborhood) => (
-                <label key={neighborhood} className="flex items-center">
+              {neighborhoods.map((neighborhood, index) => (
+                <label key={`neighborhood-${index}-${neighborhood}`} className="flex items-center">
                   <input
                     type="checkbox"
                     checked={filters.neighborhoods.includes(neighborhood)}
                     onChange={() => handleNeighborhoodToggle(neighborhood)}
-                    className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                    className="rounded border-gray-300 dark:border-gray-600 text-blue-600 focus:ring-blue-500 bg-white dark:bg-gray-700"
                   />
-                  <span className="ml-2 text-sm text-gray-700">{neighborhood}</span>
+                  <span className="ml-2 text-sm text-gray-700 dark:text-gray-300">{neighborhood}</span>
                 </label>
               ))}
             </div>
@@ -200,12 +200,12 @@ export default function FilterPanel({ filters, onFiltersChange, restaurants }: F
                 type="checkbox"
                 checked={filters.nearMe}
                 onChange={handleNearMeToggle}
-                className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                className="rounded border-gray-300 dark:border-gray-600 text-blue-600 focus:ring-blue-500 bg-white dark:bg-gray-700"
               />
-              <span className="ml-2 text-sm font-medium text-gray-700">Near Me</span>
+              <span className="ml-2 text-sm font-medium text-gray-700 dark:text-gray-300">Near Me</span>
             </label>
             {filters.nearMe && filters.userLocation && (
-              <p className="text-xs text-gray-500 mt-1">
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
                 Location: {filters.userLocation.lat.toFixed(4)}, {filters.userLocation.lng.toFixed(4)}
               </p>
             )}
@@ -219,36 +219,36 @@ export default function FilterPanel({ filters, onFiltersChange, restaurants }: F
               type="checkbox"
               checked={filters.openForLunch}
               onChange={handleOpenForLunchToggle}
-              className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+              className="rounded border-gray-300 dark:border-gray-600 text-blue-600 focus:ring-blue-500 bg-white dark:bg-gray-700"
             />
-            <span className="ml-2 text-sm font-medium text-gray-700">Open for Lunch</span>
+            <span className="ml-2 text-sm font-medium text-gray-700 dark:text-gray-300">Open for Lunch</span>
           </label>
-          <p className="text-xs text-gray-500 mt-1">
-            (Requires enriched data with hours)
+          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+            (Open 12pm-2pm)
           </p>
         </div>
       </div>
 
       {/* Filter Summary */}
       {hasActiveFilters && (
-        <div className="mt-6 pt-4 border-t border-gray-200">
-          <div className="text-sm text-gray-600">
+        <div className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
+          <div className="text-sm text-gray-600 dark:text-gray-400">
             <p className="font-medium mb-2">Active Filters:</p>
             <ul className="space-y-1">
               {filters.searchQuery && (
-                <li>• Search: "{filters.searchQuery}"</li>
+                <li key="search">• Search: "{filters.searchQuery}"</li>
               )}
               {filters.priceRanges.length > 0 && (
-                <li>• Price: {filters.priceRanges.join(', ')}</li>
+                <li key="price">• Price: {filters.priceRanges.join(', ')}</li>
               )}
               {filters.cuisines.length > 0 && (
-                <li>• Cuisine: {filters.cuisines.join(', ')}</li>
+                <li key="cuisine">• Cuisine: {filters.cuisines.join(', ')}</li>
               )}
               {filters.neighborhoods.length > 0 && (
-                <li>• Neighborhood: {filters.neighborhoods.join(', ')}</li>
+                <li key="neighborhood">• Neighborhood: {filters.neighborhoods.join(', ')}</li>
               )}
-              {filters.nearMe && <li>• Near Me</li>}
-              {filters.openForLunch && <li>• Open for Lunch</li>}
+              {filters.nearMe && <li key="nearme">• Near Me</li>}
+              {filters.openForLunch && <li key="lunch">• Open for Lunch</li>}
             </ul>
           </div>
         </div>
