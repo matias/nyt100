@@ -1,103 +1,180 @@
-import Image from "next/image";
+'use client';
+
+import { useState, useEffect, useMemo } from 'react';
+import MapboxMap from '@/components/MapboxMap';
+import RestaurantList from '@/components/RestaurantList';
+import FilterPanel from '@/components/FilterPanel';
+import { Restaurant, FilterState } from '@/types/restaurant';
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [selectedRestaurant, setSelectedRestaurant] = useState<Restaurant | null>(null);
+  const [filters, setFilters] = useState<FilterState>({
+    searchQuery: '',
+    priceRanges: [],
+    cuisines: [],
+    neighborhoods: [],
+    nearMe: false,
+    openForLunch: false,
+  });
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  // Load restaurant data
+  useEffect(() => {
+    const loadRestaurants = async () => {
+      try {
+        const response = await fetch('/data/restaurants_parsed.json');
+        const data = await response.json();
+        setRestaurants(data);
+      } catch (error) {
+        console.error('Failed to load restaurants:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadRestaurants();
+  }, []);
+
+  // Filter restaurants based on current filters
+  const filteredRestaurants = useMemo(() => {
+    let filtered = restaurants;
+
+    // Search query filter
+    if (filters.searchQuery) {
+      const query = filters.searchQuery.toLowerCase();
+      filtered = filtered.filter(restaurant =>
+        restaurant.name.toLowerCase().includes(query) ||
+        restaurant.cuisine.toLowerCase().includes(query) ||
+        restaurant.description.toLowerCase().includes(query)
+      );
+    }
+
+    // Price range filter
+    if (filters.priceRanges.length > 0) {
+      filtered = filtered.filter(restaurant =>
+        filters.priceRanges.includes(restaurant.price_range)
+      );
+    }
+
+    // Cuisine filter
+    if (filters.cuisines.length > 0) {
+      filtered = filtered.filter(restaurant =>
+        filters.cuisines.includes(restaurant.cuisine)
+      );
+    }
+
+    // Neighborhood filter
+    if (filters.neighborhoods.length > 0) {
+      filtered = filtered.filter(restaurant =>
+        filters.neighborhoods.some(neighborhood =>
+          restaurant.formatted_address?.toLowerCase().includes(neighborhood.toLowerCase())
+        )
+      );
+    }
+
+    // Near me filter
+    if (filters.nearMe && filters.userLocation) {
+      filtered = filtered
+        .filter(restaurant => restaurant.latitude && restaurant.longitude)
+        .sort((a, b) => {
+          const distanceA = calculateDistance(
+            filters.userLocation!.lat,
+            filters.userLocation!.lng,
+            a.latitude!,
+            a.longitude!
+          );
+          const distanceB = calculateDistance(
+            filters.userLocation!.lat,
+            filters.userLocation!.lng,
+            b.latitude!,
+            b.longitude!
+          );
+          return distanceA - distanceB;
+        });
+    }
+
+    // Open for lunch filter (placeholder - will implement after seeing hours data)
+    if (filters.openForLunch) {
+      // TODO: Implement lunch hours filtering
+    }
+
+    return filtered;
+  }, [restaurants, filters]);
+
+  // Calculate distance between two points (Haversine formula)
+  const calculateDistance = (lat1: number, lng1: number, lat2: number, lng2: number): number => {
+    const R = 3959; // Earth's radius in miles
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLng = (lng2 - lng1) * Math.PI / 180;
+    const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+      Math.sin(dLng / 2) * Math.sin(dLng / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
+  };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600 mx-auto"></div>
+          <p className="mt-4 text-lg text-gray-600">Loading restaurants...</p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      {/* Header */}
+      <header className="bg-white shadow-sm border-b">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <h1 className="text-3xl font-bold text-gray-900">
+            NYT Top 100 NYC Restaurants
+          </h1>
+          <p className="mt-2 text-gray-600">
+            Discover and explore the best restaurants in New York City
+          </p>
+        </div>
+      </header>
+
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+          {/* Filter Panel */}
+          <div className="lg:col-span-1">
+            <FilterPanel
+              filters={filters}
+              onFiltersChange={setFilters}
+              restaurants={restaurants}
+            />
+          </div>
+
+          {/* Map and List */}
+          <div className="lg:col-span-3">
+            <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+              {/* Map */}
+              <div className="h-96 xl:h-full min-h-[400px]">
+                <MapboxMap
+                  restaurants={filteredRestaurants}
+                  selectedRestaurant={selectedRestaurant}
+                  onRestaurantSelect={setSelectedRestaurant}
+                />
+              </div>
+
+              {/* Restaurant List */}
+              <div className="h-96 xl:h-full overflow-hidden">
+                <RestaurantList
+                  restaurants={filteredRestaurants}
+                  selectedRestaurant={selectedRestaurant}
+                  onRestaurantSelect={setSelectedRestaurant}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
