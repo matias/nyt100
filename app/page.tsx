@@ -22,9 +22,19 @@ export default function Home() {
 
   // Initialize dark mode from system preference
   useEffect(() => {
-    const isDark = localStorage.getItem('darkMode') === 'true' || 
-                   (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    const savedDarkMode = localStorage.getItem('darkMode');
+    let isDark = false;
+    
+    if (savedDarkMode !== null) {
+      // User has made a choice before
+      isDark = savedDarkMode === 'true';
+    } else {
+      // First time - use system preference
+      isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+    
     setIsDarkMode(isDark);
+    
     if (isDark) {
       document.documentElement.classList.add('dark');
     } else {
@@ -35,8 +45,10 @@ export default function Home() {
   // Toggle dark mode
   const toggleDarkMode = () => {
     const newDarkMode = !isDarkMode;
+    
     setIsDarkMode(newDarkMode);
     localStorage.setItem('darkMode', newDarkMode.toString());
+    
     if (newDarkMode) {
       document.documentElement.classList.add('dark');
     } else {
@@ -190,7 +202,8 @@ export default function Home() {
             <button
               onClick={toggleDarkMode}
               className="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
-              aria-label="Toggle dark mode"
+              aria-label={`Switch to ${isDarkMode ? 'light' : 'dark'} mode`}
+              title={`Currently in ${isDarkMode ? 'dark' : 'light'} mode. Click to switch to ${isDarkMode ? 'light' : 'dark'} mode.`}
             >
               {isDarkMode ? (
                 <svg className="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">

@@ -1,12 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Restaurant } from '@/types/restaurant';
 
 interface RestaurantListProps {
   restaurants: Restaurant[];
   selectedRestaurant: Restaurant | null;
-  onRestaurantSelect: (restaurant: Restaurant) => void;
+  onRestaurantSelect: (restaurant: Restaurant | null) => void;
 }
 
 // Helper function to format opening hours
@@ -35,6 +35,8 @@ const formatTime = (hour: number, minute: number = 0) => {
 
 export default function RestaurantList({ restaurants, selectedRestaurant, onRestaurantSelect }: RestaurantListProps) {
   const [expandedHours, setExpandedHours] = useState<Set<number>>(new Set());
+  const restaurantRefs = useRef<Map<number, HTMLDivElement>>(new Map());
+  const listContainerRef = useRef<HTMLDivElement>(null);
   
   const toggleHours = (rank: number) => {
     const newExpanded = new Set(expandedHours);
@@ -45,6 +47,21 @@ export default function RestaurantList({ restaurants, selectedRestaurant, onRest
     }
     setExpandedHours(newExpanded);
   };
+
+  // Scroll to selected restaurant when selection changes
+  useEffect(() => {
+    if (selectedRestaurant && listContainerRef.current) {
+      const restaurantElement = restaurantRefs.current.get(selectedRestaurant.rank);
+      if (restaurantElement) {
+        // Scroll the restaurant into view with smooth behavior
+        restaurantElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+          inline: 'nearest'
+        });
+      }
+    }
+  }, [selectedRestaurant]);
   if (restaurants.length === 0) {
     return (
       <div className="h-full flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-lg">
@@ -66,15 +83,29 @@ export default function RestaurantList({ restaurants, selectedRestaurant, onRest
       </div>
 
       {/* List */}
-      <div className="flex-1 overflow-y-auto">
+      <div ref={listContainerRef} className="flex-1 overflow-y-auto">
         <div className="divide-y divide-gray-200 dark:divide-gray-700">
           {restaurants.map((restaurant) => (
             <div
               key={restaurant.rank}
+              ref={(el) => {
+                if (el) {
+                  restaurantRefs.current.set(restaurant.rank, el);
+                } else {
+                  restaurantRefs.current.delete(restaurant.rank);
+                }
+              }}
               className={`p-4 cursor-pointer transition-colors hover:bg-gray-50 dark:hover:bg-gray-700 ${
                 selectedRestaurant?.rank === restaurant.rank ? 'bg-blue-50 dark:bg-blue-900 border-l-4 border-blue-500' : ''
               }`}
-              onClick={() => onRestaurantSelect(restaurant)}
+              onClick={() => {
+                // If clicking the same restaurant that's already selected, deselect it
+                if (selectedRestaurant?.rank === restaurant.rank) {
+                  onRestaurantSelect(null);
+                } else {
+                  onRestaurantSelect(restaurant);
+                }
+              }}
             >
               <div className="flex items-start space-x-3">
                 {/* Rank */}

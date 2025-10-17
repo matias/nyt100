@@ -8,7 +8,7 @@ import { Restaurant } from '@/types/restaurant';
 interface MapboxMapProps {
   restaurants: Restaurant[];
   selectedRestaurant: Restaurant | null;
-  onRestaurantSelect: (restaurant: Restaurant) => void;
+  onRestaurantSelect: (restaurant: Restaurant | null) => void;
 }
 
 export default function MapboxMap({ restaurants, selectedRestaurant, onRestaurantSelect }: MapboxMapProps) {
@@ -16,6 +16,7 @@ export default function MapboxMap({ restaurants, selectedRestaurant, onRestauran
   const map = useRef<mapboxgl.Map | null>(null);
   const markers = useRef<mapboxgl.Marker[]>([]);
   const [mapLoaded, setMapLoaded] = useState(false);
+  const previousMapState = useRef<{ center: [number, number]; zoom: number } | null>(null);
 
   // Initialize map
   useEffect(() => {
@@ -68,7 +69,12 @@ export default function MapboxMap({ restaurants, selectedRestaurant, onRestauran
 
         // Add click handler
         marker.getElement().addEventListener('click', () => {
-          onRestaurantSelect(restaurant);
+          // If clicking the same restaurant that's already selected, deselect it
+          if (selectedRestaurant?.place_id === restaurant.place_id) {
+            onRestaurantSelect(null); // Deselect by passing null
+          } else {
+            onRestaurantSelect(restaurant);
+          }
         });
 
         // Add popup
@@ -112,14 +118,28 @@ export default function MapboxMap({ restaurants, selectedRestaurant, onRestauran
     if (!map.current || !mapLoaded) return;
 
     if (selectedRestaurant && selectedRestaurant.latitude && selectedRestaurant.longitude) {
+      // Save current map state before zooming
+      previousMapState.current = {
+        center: map.current.getCenter().toArray() as [number, number],
+        zoom: map.current.getZoom()
+      };
+      
       // Zoom to selected restaurant
       map.current.flyTo({
         center: [selectedRestaurant.longitude, selectedRestaurant.latitude],
         zoom: 16,
         duration: 1000,
       });
-    } else if (!selectedRestaurant && restaurants.length > 0) {
-      // Zoom back out to show all restaurants
+    } else if (!selectedRestaurant && previousMapState.current) {
+      // Zoom back to previous position
+      map.current.flyTo({
+        center: previousMapState.current.center,
+        zoom: previousMapState.current.zoom,
+        duration: 1000,
+      });
+      previousMapState.current = null;
+    } else if (!selectedRestaurant && restaurants.length > 0 && !previousMapState.current) {
+      // Initial load - zoom to show all restaurants
       const bounds = new mapboxgl.LngLatBounds();
       restaurants.forEach(restaurant => {
         if (restaurant.latitude && restaurant.longitude) {
