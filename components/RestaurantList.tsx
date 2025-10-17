@@ -9,6 +9,51 @@ interface RestaurantListProps {
   onRestaurantSelect: (restaurant: Restaurant | null) => void;
 }
 
+// Check if restaurant is currently open based on opening hours (Eastern Time)
+const isRestaurantOpen = (openingHours: { open: { day: number; hour: number; minute: number }; close: { day: number; hour: number; minute: number } }[] | undefined) => {
+  if (!openingHours || !Array.isArray(openingHours) || openingHours.length === 0) {
+    return undefined; // Unknown
+  }
+
+  // Get current time in Eastern Time
+  const now = new Date();
+  const etString = now.toLocaleString('en-US', { timeZone: 'America/New_York' });
+  const etDate = new Date(etString);
+  
+  const currentDay = etDate.getDay(); // 0 = Sunday, 6 = Saturday
+  const currentHour = etDate.getHours();
+  const currentMinute = etDate.getMinutes();
+  const currentTimeInMinutes = currentHour * 60 + currentMinute;
+
+  // Check if current time falls within any opening period
+  for (const period of openingHours) {
+    if (!period.open || !period.close) continue;
+
+    const openDay = period.open.day;
+    const closeDay = period.close.day;
+    const openTime = period.open.hour * 60 + (period.open.minute || 0);
+    const closeTime = period.close.hour * 60 + (period.close.minute || 0);
+
+    // Check if the period spans across midnight (close time is on a different day)
+    if (closeDay !== openDay) {
+      // Period spans midnight
+      if (currentDay === openDay && currentTimeInMinutes >= openTime) {
+        return true; // We're on the opening day after opening time
+      }
+      if (currentDay === closeDay && currentTimeInMinutes < closeTime) {
+        return true; // We're on the closing day before closing time
+      }
+    } else {
+      // Period is within the same day
+      if (currentDay === openDay && currentTimeInMinutes >= openTime && currentTimeInMinutes < closeTime) {
+        return true;
+      }
+    }
+  }
+
+  return false;
+};
+
 // Helper function to format opening hours
 const formatOpeningHours = (openingHours: { open: { day: number; hour: number; minute: number }; close: { day: number; hour: number; minute: number } }[]) => {
   if (!openingHours || !Array.isArray(openingHours)) return null;
@@ -169,15 +214,18 @@ export default function RestaurantList({ restaurants, selectedRestaurant, onRest
                   {/* Condensed Info Line: Open/Closed, Cuisine, Price, Address */}
                   <div className="mt-1 flex items-center flex-wrap gap-x-2 gap-y-1 text-xs text-gray-600 dark:text-gray-400">
                     {/* Open/Closed */}
-                    {restaurant.is_open_now !== undefined && (
-                      <span className={`inline-flex items-center px-1.5 py-0.5 rounded ${
-                        restaurant.is_open_now 
-                          ? 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300' 
-                          : 'bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-300'
-                      }`}>
-                        {restaurant.is_open_now ? 'Open' : 'Closed'}
-                      </span>
-                    )}
+                    {(() => {
+                      const isOpen = isRestaurantOpen(restaurant.opening_hours);
+                      return isOpen !== undefined && (
+                        <span className={`inline-flex items-center px-1.5 py-0.5 rounded ${
+                          isOpen 
+                            ? 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300' 
+                            : 'bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-300'
+                        }`}>
+                          {isOpen ? 'Open' : 'Closed'}
+                        </span>
+                      );
+                    })()}
                     
                     {/* Cuisine */}
                     <span>{restaurant.cuisine}</span>
