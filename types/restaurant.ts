@@ -38,13 +38,6 @@ export interface OpeningHoursPeriod {
 
 export interface FilterState {
   searchQuery: string;
-  priceRanges: string[];
-  cuisines: string[];
-  neighborhoods: string[];
-  nearMe: boolean;
+  boroughs: string[];
   openForLunch: boolean;
-  userLocation?: {
-    lat: number;
-    lng: number;
-  };
 }

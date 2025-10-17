@@ -10,7 +10,7 @@ interface RestaurantListProps {
 }
 
 // Helper function to format opening hours
-const formatOpeningHours = (openingHours: any[]) => {
+const formatOpeningHours = (openingHours: { open: { day: number; hour: number; minute: number }; close: { day: number; hour: number; minute: number } }[]) => {
   if (!openingHours || !Array.isArray(openingHours)) return null;
   
   const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -62,6 +62,7 @@ export default function RestaurantList({ restaurants, selectedRestaurant, onRest
       }
     }
   }, [selectedRestaurant]);
+
   if (restaurants.length === 0) {
     return (
       <div className="h-full flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-lg">
@@ -75,13 +76,6 @@ export default function RestaurantList({ restaurants, selectedRestaurant, onRest
 
   return (
     <div className="h-full bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden flex flex-col">
-      {/* Header */}
-      <div className="p-4 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
-        <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
-          Restaurants ({restaurants.length})
-        </h2>
-      </div>
-
       {/* List */}
       <div ref={listContainerRef} className="flex-1 overflow-y-auto">
         <div className="divide-y divide-gray-200 dark:divide-gray-700">
@@ -117,39 +111,93 @@ export default function RestaurantList({ restaurants, selectedRestaurant, onRest
 
                 {/* Content */}
                 <div className="flex-1 min-w-0">
+                  {/* Name and Rating */}
                   <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <h3 className="text-sm font-medium text-gray-900 dark:text-white truncate">
+                    <div className="flex items-baseline gap-2 flex-wrap">
+                      <h3 className="text-sm font-medium text-gray-900 dark:text-white">
                         {restaurant.name}
                       </h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                        {restaurant.cuisine}
-                      </p>
+                      <div className="flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400">
+                        {restaurant.website && (
+                          <>
+                            <span>·</span>
+                            <a
+                              href={restaurant.website}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={(e) => e.stopPropagation()}
+                              className="text-blue-600 dark:text-blue-400 hover:underline"
+                            >
+                              Website
+                            </a>
+                          </>
+                        )}
+                        {(restaurant.google_maps_url || restaurant.latitude) && (
+                          <>
+                            <span>·</span>
+                            <a
+                              href={
+                                restaurant.google_maps_url || 
+                                `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                                  restaurant.latitude && restaurant.longitude
+                                    ? `${restaurant.latitude},${restaurant.longitude}`
+                                    : restaurant.name + ' ' + (restaurant.formatted_address || '')
+                                )}`
+                              }
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={(e) => e.stopPropagation()}
+                              className="text-blue-600 dark:text-blue-400 hover:underline"
+                            >
+                              Maps
+                            </a>
+                          </>
+                        )}
+                      </div>
                     </div>
-                    
-                    {/* Rating */}
-                    <div className="flex items-center space-x-1 ml-2">
+                    <div className="flex items-center space-x-1 ml-2 flex-shrink-0">
                       <span className="text-yellow-400">★</span>
                       <span className="text-sm font-medium text-gray-900 dark:text-white">
                         {restaurant.rating}
                       </span>
-                      <span className="text-xs text-gray-500 dark:text-gray-400">
+                      {/* <span className="text-xs text-gray-500 dark:text-gray-400">
                         ({restaurant.review_count.toLocaleString()})
-                      </span>
+                      </span> */}
                     </div>
                   </div>
 
-                  {/* Price Range */}
-                  <div className="mt-2 flex items-center justify-between">
-                    <span className="text-sm font-medium text-green-600 dark:text-green-400">
+                  {/* Condensed Info Line: Open/Closed, Cuisine, Price, Address */}
+                  <div className="mt-1 flex items-center flex-wrap gap-x-2 gap-y-1 text-xs text-gray-600 dark:text-gray-400">
+                    {/* Open/Closed */}
+                    {restaurant.is_open_now !== undefined && (
+                      <span className={`inline-flex items-center px-1.5 py-0.5 rounded ${
+                        restaurant.is_open_now 
+                          ? 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300' 
+                          : 'bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-300'
+                      }`}>
+                        {restaurant.is_open_now ? 'Open' : 'Closed'}
+                      </span>
+                    )}
+                    
+                    {/* Cuisine */}
+                    <span>{restaurant.cuisine}</span>
+                    
+                    {/* Separator */}
+                    <span>•</span>
+                    
+                    {/* Price Range */}
+                    <span className="font-medium text-green-600 dark:text-green-400">
                       {restaurant.price_range}
                     </span>
                     
-                    {/* Address (if available) */}
+                    {/* Address */}
                     {restaurant.formatted_address && (
-                      <span className="text-xs text-gray-600 dark:text-gray-400 truncate ml-2">
-                        {restaurant.formatted_address.split(',')[0]}
-                      </span>
+                      <>
+                        <span>•</span>
+                        <span className="truncate">
+                          {restaurant.formatted_address.split(',').slice(0, 2).join(',')}
+                        </span>
+                      </>
                     )}
                   </div>
 
@@ -158,58 +206,7 @@ export default function RestaurantList({ restaurants, selectedRestaurant, onRest
                     {restaurant.description}
                   </p>
 
-                  {/* Status indicators */}
-                  <div className="mt-2 flex items-center space-x-2">
-                    {restaurant.is_open_now !== undefined && (
-                      <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
-                        restaurant.is_open_now 
-                          ? 'bg-green-100 text-green-800' 
-                          : 'bg-red-100 text-red-800'
-                      }`}>
-                        {restaurant.is_open_now ? 'Open Now' : 'Closed'}
-                      </span>
-                    )}
-                    
-                    {restaurant.google_rating && restaurant.google_rating !== restaurant.rating && (
-                      <span className="text-xs text-gray-600 dark:text-gray-400">
-                        Google: {restaurant.google_rating}★
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Contact Info */}
-                  {(restaurant.website || restaurant.phone) && (
-                    <div className="mt-2 flex items-center space-x-3 text-xs">
-                      {restaurant.website && (
-                        <a
-                          href={restaurant.website}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={(e) => e.stopPropagation()}
-                          className="text-blue-600 hover:text-blue-800 hover:underline flex items-center"
-                        >
-                          <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clipRule="evenodd" />
-                          </svg>
-                          Website
-                        </a>
-                      )}
-                      {restaurant.phone && (
-                        <a
-                          href={`tel:${restaurant.phone}`}
-                          onClick={(e) => e.stopPropagation()}
-                          className="text-green-600 hover:text-green-800 hover:underline flex items-center"
-                        >
-                          <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                          </svg>
-                          {restaurant.phone}
-                        </a>
-                      )}
-                    </div>
-                  )}
-
-                  {/* Opening Hours */}
+                  {/* Opening Hours (Collapsible) */}
                   {restaurant.opening_hours && restaurant.opening_hours.length > 0 && (
                     <div className="mt-2">
                       <button
@@ -217,7 +214,7 @@ export default function RestaurantList({ restaurants, selectedRestaurant, onRest
                           e.stopPropagation();
                           toggleHours(restaurant.rank);
                         }}
-                        className="text-xs text-blue-600 hover:text-blue-800 flex items-center"
+                        className="text-xs text-blue-600 dark:text-blue-400 hover:underline flex items-center"
                       >
                         {expandedHours.has(restaurant.rank) ? '▼' : '▶'} Hours
                       </button>

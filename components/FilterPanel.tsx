@@ -1,258 +1,135 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { Restaurant, FilterState } from '@/types/restaurant';
+import { useState } from 'react';
+import { FilterState } from '@/types/restaurant';
 
 interface FilterPanelProps {
   filters: FilterState;
   onFiltersChange: (filters: FilterState) => void;
-  restaurants: Restaurant[];
+  filteredCount: number;
 }
 
-export default function FilterPanel({ filters, onFiltersChange, restaurants }: FilterPanelProps) {
-  const [isNearMeSupported, setIsNearMeSupported] = useState(false);
+const BOROUGHS = [
+  { id: 'Manhattan', label: 'MN' },
+  { id: 'Brooklyn', label: 'BK' },
+  { id: 'Queens', label: 'QN' },
+  { id: 'Bronx', label: 'BX' },
+  { id: 'Staten Island', label: 'SI' }
+];
 
-  // Check if geolocation is supported
-  useEffect(() => {
-    setIsNearMeSupported('geolocation' in navigator);
-  }, []);
+export default function FilterPanel({ filters, onFiltersChange, filteredCount }: FilterPanelProps) {
+  const [showSearchInput, setShowSearchInput] = useState(false);
 
-  // Get unique values for filter options
-  const priceRanges = [...new Set(restaurants.map(r => r.price_range))].sort();
-  const cuisines = [...new Set(restaurants.map(r => r.cuisine))].sort();
-  const neighborhoods = [...new Set(
-    restaurants
-      .filter(r => r.formatted_address)
-      .map(r => {
-        const parts = r.formatted_address!.split(',');
-        return parts[parts.length - 2]?.trim(); // Get neighborhood from address
-      })
-      .filter(Boolean)
-  )].sort();
+  const handleLunchToggle = () => {
+    onFiltersChange({ ...filters, openForLunch: !filters.openForLunch });
+  };
+
+  const handleBoroughToggle = (borough: string) => {
+    const newBoroughs = filters.boroughs.includes(borough)
+      ? filters.boroughs.filter(b => b !== borough)
+      : [...filters.boroughs, borough];
+    onFiltersChange({ ...filters, boroughs: newBoroughs });
+  };
 
   const handleSearchChange = (value: string) => {
     onFiltersChange({ ...filters, searchQuery: value });
-  };
-
-  const handlePriceRangeToggle = (priceRange: string) => {
-    const newPriceRanges = filters.priceRanges.includes(priceRange)
-      ? filters.priceRanges.filter(p => p !== priceRange)
-      : [...filters.priceRanges, priceRange];
-    onFiltersChange({ ...filters, priceRanges: newPriceRanges });
-  };
-
-  const handleCuisineToggle = (cuisine: string) => {
-    const newCuisines = filters.cuisines.includes(cuisine)
-      ? filters.cuisines.filter(c => c !== cuisine)
-      : [...filters.cuisines, cuisine];
-    onFiltersChange({ ...filters, cuisines: newCuisines });
-  };
-
-  const handleNeighborhoodToggle = (neighborhood: string) => {
-    const newNeighborhoods = filters.neighborhoods.includes(neighborhood)
-      ? filters.neighborhoods.filter(n => n !== neighborhood)
-      : [...filters.neighborhoods, neighborhood];
-    onFiltersChange({ ...filters, neighborhoods: newNeighborhoods });
-  };
-
-  const handleNearMeToggle = () => {
-    if (!filters.nearMe && isNearMeSupported) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          onFiltersChange({
-            ...filters,
-            nearMe: true,
-            userLocation: {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude,
-            },
-          });
-        },
-        (error) => {
-          console.error('Error getting location:', error);
-          onFiltersChange({ ...filters, nearMe: false });
-        }
-      );
-    } else {
-      onFiltersChange({ ...filters, nearMe: false, userLocation: undefined });
+    if (!value) {
+      setShowSearchInput(false);
     }
-  };
-
-  const handleOpenForLunchToggle = () => {
-    onFiltersChange({ ...filters, openForLunch: !filters.openForLunch });
   };
 
   const clearAllFilters = () => {
     onFiltersChange({
       searchQuery: '',
-      priceRanges: [],
-      cuisines: [],
-      neighborhoods: [],
-      nearMe: false,
+      boroughs: [],
       openForLunch: false,
-      userLocation: undefined,
     });
+    setShowSearchInput(false);
   };
 
   const hasActiveFilters = filters.searchQuery || 
-    filters.priceRanges.length > 0 || 
-    filters.cuisines.length > 0 || 
-    filters.neighborhoods.length > 0 || 
-    filters.nearMe || 
+    filters.boroughs.length > 0 || 
     filters.openForLunch;
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 h-fit">
-      <div className="flex items-center justify-between mb-6">
-        <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Filters</h2>
-        {hasActiveFilters && (
+    <div className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center gap-2 py-3 overflow-x-auto">
+          {/* Lunch Toggle */}
           <button
-            onClick={clearAllFilters}
-            className="text-sm text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium"
+            onClick={handleLunchToggle}
+            className={`flex-shrink-0 px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
+              filters.openForLunch
+                ? 'bg-blue-600 text-white hover:bg-blue-700'
+                : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'
+            }`}
           >
-            Clear All
+            Lunch
           </button>
-        )}
-      </div>
 
-      <div className="space-y-6">
-        {/* Search */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-            Search
-          </label>
-          <input
-            type="text"
-            value={filters.searchQuery}
-            onChange={(e) => handleSearchChange(e.target.value)}
-            placeholder="Search restaurants..."
-            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-          />
-        </div>
+          {/* Borough Toggles */}
+          {BOROUGHS.map(({ id, label }) => (
+            <button
+              key={id}
+              onClick={() => handleBoroughToggle(id)}
+              className={`flex-shrink-0 px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
+                filters.boroughs.includes(id)
+                  ? 'bg-blue-600 text-white hover:bg-blue-700'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'
+              }`}
+            >
+              {label}
+            </button>
+          ))}
 
-        {/* Price Range */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-            Price Range
-          </label>
-          <div className="space-y-2">
-            {priceRanges.map((priceRange, index) => (
-              <label key={`price-${index}-${priceRange}`} className="flex items-center">
-                <input
-                  type="checkbox"
-                  checked={filters.priceRanges.includes(priceRange)}
-                  onChange={() => handlePriceRangeToggle(priceRange)}
-                  className="rounded border-gray-300 dark:border-gray-600 text-blue-600 focus:ring-blue-500 bg-white dark:bg-gray-700"
-                />
-                <span className="ml-2 text-sm text-gray-700 dark:text-gray-300">{priceRange}</span>
-              </label>
-            ))}
-          </div>
-        </div>
-
-        {/* Cuisine */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-            Cuisine
-          </label>
-          <div className="space-y-2 max-h-40 overflow-y-auto">
-            {cuisines.map((cuisine, index) => (
-              <label key={`cuisine-${index}-${cuisine}`} className="flex items-center">
-                <input
-                  type="checkbox"
-                  checked={filters.cuisines.includes(cuisine)}
-                  onChange={() => handleCuisineToggle(cuisine)}
-                  className="rounded border-gray-300 dark:border-gray-600 text-blue-600 focus:ring-blue-500 bg-white dark:bg-gray-700"
-                />
-                <span className="ml-2 text-sm text-gray-700 dark:text-gray-300">{cuisine}</span>
-              </label>
-            ))}
-          </div>
-        </div>
-
-        {/* Neighborhood */}
-        {neighborhoods.length > 0 && (
-          <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              Neighborhood
-            </label>
-            <div className="space-y-2 max-h-40 overflow-y-auto">
-              {neighborhoods.map((neighborhood, index) => (
-                <label key={`neighborhood-${index}-${neighborhood}`} className="flex items-center">
-                  <input
-                    type="checkbox"
-                    checked={filters.neighborhoods.includes(neighborhood)}
-                    onChange={() => handleNeighborhoodToggle(neighborhood)}
-                    className="rounded border-gray-300 dark:border-gray-600 text-blue-600 focus:ring-blue-500 bg-white dark:bg-gray-700"
-                  />
-                  <span className="ml-2 text-sm text-gray-700 dark:text-gray-300">{neighborhood}</span>
-                </label>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Near Me */}
-        {isNearMeSupported && (
-          <div>
-            <label className="flex items-center">
+          {/* Search */}
+          {showSearchInput ? (
+            <div className="flex-shrink-0 flex items-center gap-1">
               <input
-                type="checkbox"
-                checked={filters.nearMe}
-                onChange={handleNearMeToggle}
-                className="rounded border-gray-300 dark:border-gray-600 text-blue-600 focus:ring-blue-500 bg-white dark:bg-gray-700"
+                type="text"
+                value={filters.searchQuery}
+                onChange={(e) => handleSearchChange(e.target.value)}
+                placeholder="Search..."
+                autoFocus
+                className="w-48 px-3 py-1.5 text-sm border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               />
-              <span className="ml-2 text-sm font-medium text-gray-700 dark:text-gray-300">Near Me</span>
-            </label>
-            {filters.nearMe && filters.userLocation && (
-              <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                Location: {filters.userLocation.lat.toFixed(4)}, {filters.userLocation.lng.toFixed(4)}
-              </p>
-            )}
-          </div>
-        )}
+              <button
+                onClick={() => {
+                  handleSearchChange('');
+                  setShowSearchInput(false);
+                }}
+                className="p-1.5 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          ) : (
+            <button
+              onClick={() => setShowSearchInput(true)}
+              className="flex-shrink-0 px-3 py-1.5 text-sm font-medium rounded-md bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 transition-colors"
+            >
+              Search
+            </button>
+          )}
 
-        {/* Open for Lunch */}
-        <div>
-          <label className="flex items-center">
-            <input
-              type="checkbox"
-              checked={filters.openForLunch}
-              onChange={handleOpenForLunchToggle}
-              className="rounded border-gray-300 dark:border-gray-600 text-blue-600 focus:ring-blue-500 bg-white dark:bg-gray-700"
-            />
-            <span className="ml-2 text-sm font-medium text-gray-700 dark:text-gray-300">Open for Lunch</span>
-          </label>
-          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-            (Open 12pm-2pm)
-          </p>
+          {/* Clear All */}
+          {hasActiveFilters && (
+            <button
+              onClick={clearAllFilters}
+              className="flex-shrink-0 px-3 py-1.5 text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"
+            >
+              Clear
+            </button>
+          )}
+
+          {/* Restaurant Count */}
+          <div className="flex-shrink-0 ml-auto text-sm font-medium text-gray-600 dark:text-gray-400">
+            ({filteredCount})
+          </div>
         </div>
       </div>
-
-      {/* Filter Summary */}
-      {hasActiveFilters && (
-        <div className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
-          <div className="text-sm text-gray-600 dark:text-gray-400">
-            <p className="font-medium mb-2">Active Filters:</p>
-            <ul className="space-y-1">
-              {filters.searchQuery && (
-                <li key="search">• Search: "{filters.searchQuery}"</li>
-              )}
-              {filters.priceRanges.length > 0 && (
-                <li key="price">• Price: {filters.priceRanges.join(', ')}</li>
-              )}
-              {filters.cuisines.length > 0 && (
-                <li key="cuisine">• Cuisine: {filters.cuisines.join(', ')}</li>
-              )}
-              {filters.neighborhoods.length > 0 && (
-                <li key="neighborhood">• Neighborhood: {filters.neighborhoods.join(', ')}</li>
-              )}
-              {filters.nearMe && <li key="nearme">• Near Me</li>}
-              {filters.openForLunch && <li key="lunch">• Open for Lunch</li>}
-            </ul>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

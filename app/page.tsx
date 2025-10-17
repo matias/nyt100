@@ -10,51 +10,26 @@ export default function Home() {
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedRestaurant, setSelectedRestaurant] = useState<Restaurant | null>(null);
-  const [isDarkMode, setIsDarkMode] = useState(false);
   const [filters, setFilters] = useState<FilterState>({
     searchQuery: '',
-    priceRanges: [],
-    cuisines: [],
-    neighborhoods: [],
-    nearMe: false,
+    boroughs: [],
     openForLunch: false,
   });
 
-  // Initialize dark mode from system preference
+  // Deselect restaurant when borough filters change
   useEffect(() => {
-    const savedDarkMode = localStorage.getItem('darkMode');
-    let isDark = false;
-    
-    if (savedDarkMode !== null) {
-      // User has made a choice before
-      isDark = savedDarkMode === 'true';
-    } else {
-      // First time - use system preference
-      isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    }
-    
-    setIsDarkMode(isDark);
-    
+    setSelectedRestaurant(null);
+  }, [filters.boroughs]);
+
+  // Use system dark mode preference
+  useEffect(() => {
+    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     if (isDark) {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
     }
   }, []);
-
-  // Toggle dark mode
-  const toggleDarkMode = () => {
-    const newDarkMode = !isDarkMode;
-    
-    setIsDarkMode(newDarkMode);
-    localStorage.setItem('darkMode', newDarkMode.toString());
-    
-    if (newDarkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  };
 
   // Load restaurant data
   useEffect(() => {
@@ -87,48 +62,42 @@ export default function Home() {
       );
     }
 
-    // Price range filter
-    if (filters.priceRanges.length > 0) {
-      filtered = filtered.filter(restaurant =>
-        filters.priceRanges.includes(restaurant.price_range)
-      );
-    }
-
-    // Cuisine filter
-    if (filters.cuisines.length > 0) {
-      filtered = filtered.filter(restaurant =>
-        filters.cuisines.includes(restaurant.cuisine)
-      );
-    }
-
-    // Neighborhood filter
-    if (filters.neighborhoods.length > 0) {
-      filtered = filtered.filter(restaurant =>
-        filters.neighborhoods.some(neighborhood =>
-          restaurant.formatted_address?.toLowerCase().includes(neighborhood.toLowerCase())
-        )
-      );
-    }
-
-    // Near me filter
-    if (filters.nearMe && filters.userLocation) {
-      filtered = filtered
-        .filter(restaurant => restaurant.latitude && restaurant.longitude)
-        .sort((a, b) => {
-          const distanceA = calculateDistance(
-            filters.userLocation!.lat,
-            filters.userLocation!.lng,
-            a.latitude!,
-            a.longitude!
-          );
-          const distanceB = calculateDistance(
-            filters.userLocation!.lat,
-            filters.userLocation!.lng,
-            b.latitude!,
-            b.longitude!
-          );
-          return distanceA - distanceB;
+    // Borough filter (OR logic - show restaurants from any selected borough)
+    if (filters.boroughs.length > 0) {
+      filtered = filtered.filter(restaurant => {
+        if (!restaurant.formatted_address) return false;
+        
+        // Extract zip code from address
+        const match = restaurant.formatted_address.match(/\b\d{5}\b/);
+        if (!match) return false;
+        
+        const zip = match[0];
+        const zipNum = parseInt(zip);
+        
+        // Check if the restaurant's zip code is in any of the selected boroughs
+        return filters.boroughs.some(borough => {
+          switch (borough) {
+            case 'Manhattan':
+              return (zipNum >= 10001 && zipNum <= 10048) || 
+                     (zipNum >= 10101 && zipNum <= 10199) || 
+                     (zipNum >= 10270 && zipNum <= 10282);
+            case 'Brooklyn':
+              return zipNum >= 11201 && zipNum <= 11256;
+            case 'Queens':
+              return (zipNum >= 11004 && zipNum <= 11005) ||
+                     (zipNum >= 11101 && zipNum <= 11109) ||
+                     (zipNum >= 11351 && zipNum <= 11390) ||
+                     (zipNum >= 11411 && zipNum <= 11436) ||
+                     (zipNum >= 11691 && zipNum <= 11697);
+            case 'Bronx':
+              return zipNum >= 10451 && zipNum <= 10475;
+            case 'Staten Island':
+              return zipNum >= 10301 && zipNum <= 10314;
+            default:
+              return false;
+          }
         });
+      });
     }
 
     // Open for lunch filter (12pm-2pm)
@@ -162,18 +131,6 @@ export default function Home() {
     return filtered;
   }, [restaurants, filters]);
 
-  // Calculate distance between two points (Haversine formula)
-  const calculateDistance = (lat1: number, lng1: number, lat2: number, lng2: number): number => {
-    const R = 3959; // Earth's radius in miles
-    const dLat = (lat2 - lat1) * Math.PI / 180;
-    const dLng = (lng2 - lng1) * Math.PI / 180;
-    const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-      Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
-      Math.sin(dLng / 2) * Math.sin(dLng / 2);
-    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    return R * c;
-  };
-
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -187,71 +144,34 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      {/* Header */}
-      <header className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
-                NYT Top 100 NYC Restaurants
-              </h1>
-              <p className="mt-2 text-gray-700 dark:text-gray-300">
-                Discover and explore the best restaurants in New York City
-              </p>
-            </div>
-            <button
-              onClick={toggleDarkMode}
-              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
-              aria-label={`Switch to ${isDarkMode ? 'light' : 'dark'} mode`}
-              title={`Currently in ${isDarkMode ? 'dark' : 'light'} mode. Click to switch to ${isDarkMode ? 'light' : 'dark'} mode.`}
-            >
-              {isDarkMode ? (
-                <svg className="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clipRule="evenodd" />
-                </svg>
-              ) : (
-                <svg className="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-                </svg>
-              )}
-            </button>
-          </div>
-        </div>
-      </header>
+      {/* Sticky Filter Bar */}
+      <div className="sticky top-0 z-50">
+        <FilterPanel
+          filters={filters}
+          onFiltersChange={setFilters}
+          filteredCount={filteredRestaurants.length}
+        />
+      </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-          {/* Filter Panel */}
-          <div className="lg:col-span-1">
-            <FilterPanel
-              filters={filters}
-              onFiltersChange={setFilters}
-              restaurants={restaurants}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-4" style={{ height: 'calc(100vh - 100px)' }}>
+          {/* Map */}
+          <div className="h-full min-h-[400px]">
+            <MapboxMap
+              restaurants={filteredRestaurants}
+              selectedRestaurant={selectedRestaurant}
+              onRestaurantSelect={setSelectedRestaurant}
             />
           </div>
 
-          {/* Map and List */}
-          <div className="lg:col-span-3">
-            <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
-              {/* Map */}
-              <div className="h-96 xl:h-full min-h-[400px]">
-                <MapboxMap
-                  restaurants={filteredRestaurants}
-                  selectedRestaurant={selectedRestaurant}
-                  onRestaurantSelect={setSelectedRestaurant}
-                />
-              </div>
-
-              {/* Restaurant List */}
-              <div className="h-96 xl:h-[calc(100vh-200px)] overflow-hidden">
-                <RestaurantList
-                  restaurants={filteredRestaurants}
-                  selectedRestaurant={selectedRestaurant}
-                  onRestaurantSelect={setSelectedRestaurant}
-                />
-              </div>
-            </div>
+          {/* Restaurant List */}
+          <div className="h-full overflow-hidden">
+            <RestaurantList
+              restaurants={filteredRestaurants}
+              selectedRestaurant={selectedRestaurant}
+              onRestaurantSelect={setSelectedRestaurant}
+            />
           </div>
         </div>
       </div>
