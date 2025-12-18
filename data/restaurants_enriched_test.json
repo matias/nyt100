@@ -1,0 +1,525 @@
+[
+  {
+    "rank": 1,
+    "name": "Semma",
+    "rating": 4.2,
+    "review_count": 1431,
+    "price_range": "$50–100",
+    "cuisine": "South Indian",
+    "description": "A deeply personal tribute\n              to the chef Vijay Kumar’s upbringing in the South Indian state of Tamil Nadu and home to the city’s best\n              dosa. Ranked No. 1 on The Times’s 2025 list of best New York City restaurants.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nq4UUj4D-nJzaNZIJjKR2TFkMTYdve_yJ_ilyQy2KFRthGZrU2uJ2zZZGSQaLPsERFSjIYrkhXepDGKcSt9HBQWxFuyzgFNluxMNcywW0s05W0G9RhSUhOtNuGNa6b8HC9L4p4Y=w122-h92-k-no",
+    "place_id": "ChIJxZmzO7hZwokRx2fls4uU4YU",
+    "google_rating": 4.2,
+    "google_review_count": 1431,
+    "formatted_address": "60 Greenwich Ave, New York, NY 10011, USA",
+    "latitude": 40.7360304,
+    "longitude": -74.0005639,
+    "opening_hours": [
+      {
+        "open": {
+          "day": 1,
+          "hour": 17,
+          "minute": 0
+        },
+        "close": {
+          "day": 1,
+          "hour": 22,
+          "minute": 0
+        }
+      },
+      {
+        "open": {
+          "day": 2,
+          "hour": 17,
+          "minute": 0
+        },
+        "close": {
+          "day": 2,
+          "hour": 22,
+          "minute": 0
+        }
+      },
+      {
+        "open": {
+          "day": 3,
+          "hour": 17,
+          "minute": 0
+        },
+        "close": {
+          "day": 3,
+          "hour": 22,
+          "minute": 0
+        }
+      },
+      {
+        "open": {
+          "day": 4,
+          "hour": 17,
+          "minute": 0
+        },
+        "close": {
+          "day": 4,
+          "hour": 22,
+          "minute": 0
+        }
+      },
+      {
+        "open": {
+          "day": 5,
+          "hour": 17,
+          "minute": 0
+        },
+        "close": {
+          "day": 5,
+          "hour": 22,
+          "minute": 0
+        }
+      },
+      {
+        "open": {
+          "day": 6,
+          "hour": 17,
+          "minute": 0
+        },
+        "close": {
+          "day": 6,
+          "hour": 22,
+          "minute": 0
+        }
+      }
+    ],
+    "is_open_now": true,
+    "website": "http://semma.nyc/",
+    "phone": null,
+    "google_maps_url": "https://maps.google.com/?cid=9647155204543834055&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "last_updated": "2025-10-16 19:02:56"
+  },
+  {
+    "rank": 2,
+    "name": "ATOMIX",
+    "rating": 4.7,
+    "review_count": 471,
+    "price_range": "$100+",
+    "cuisine": "Korean",
+    "description": "Tasting menu restaurant\n              known for its punchy, distinctly Korean flavors, understated service and use of modern presentation and\n              techniques. Ranked No. 2 on The Times’s 2025 list of best New York City restaurants.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqmMGzbEACqybT7uY1VC4oXjlpCoG7KJ2acnnceRDipV8nkOtlDczszwsVGIOiVxHxQPrszVQwrXIc17sIVIujtjdU325LLI0yxbI3JMb33sLWmqQfZ9QY7hSoH_BehZ1z02dHYLg=w138-h92-k-no",
+    "place_id": "ChIJ3bmAHghZwokRRXYO57yLuss",
+    "google_rating": 4.7,
+    "google_review_count": 471,
+    "formatted_address": "104 E 30th St, New York, NY 10016, USA",
+    "latitude": 40.7442317,
+    "longitude": -73.9828502,
+    "opening_hours": [
+      {
+        "open": {
+          "day": 0,
+          "hour": 17,
+          "minute": 30
+        },
+        "close": {
+          "day": 0,
+          "hour": 23,
+          "minute": 0
+        }
+      },
+      {
+        "open": {
+          "day": 1,
+          "hour": 17,
+          "minute": 30
+        },
+        "close": {
+          "day": 1,
+          "hour": 23,
+          "minute": 0
+        }
+      },
+      {
+        "open": {
+          "day": 2,
+          "hour": 17,
+          "minute": 30
+        },
+        "close": {
+          "day": 2,
+          "hour": 23,
+          "minute": 0
+        }
+      },
+      {
+        "open": {
+          "day": 3,
+          "hour": 17,
+          "minute": 30
+        },
+        "close": {
+          "day": 3,
+          "hour": 23,
+          "minute": 0
+        }
+      },
+      {
+        "open": {
+          "day": 4,
+          "hour": 17,
+          "minute": 30
+        },
+        "close": {
+          "day": 4,
+          "hour": 23,
+          "minute": 0
+        }
+      },
+      {
+        "open": {
+          "day": 5,
+          "hour": 17,
+          "minute": 30
+        },
+        "close": {
+          "day": 5,
+          "hour": 23,
+          "minute": 0
+        }
+      },
+      {
+        "open": {
+          "day": 6,
+          "hour": 17,
+          "minute": 30
+        },
+        "close": {
+          "day": 6,
+          "hour": 23,
+          "minute": 0
+        }
+      }
+    ],
+    "is_open_now": true,
+    "website": "http://www.atomixnyc.com/",
+    "phone": null,
+    "google_maps_url": "https://maps.google.com/?cid=14680199578814150213&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "last_updated": "2025-10-16 19:02:58"
+  },
+  {
+    "rank": 3,
+    "name": "Le Bernardin",
+    "rating": 4.6,
+    "review_count": 4013,
+    "price_range": "$100+",
+    "cuisine": "French",
+    "description": "Elegant, airy Midtown\n              institution specializing in ambitious seafood dishes. Known for attracting a well-heeled crowd and service\n              that is charmingly French. Ranked No. 3 on The Times’s 2025 list of best New York City restaurants.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipMC-dJ9gfcpFIX8PS-8yPYhjCMfjl6q35zAn1t8=w147-h92-k-no",
+    "place_id": "ChIJV7QQ6kdZwokRax4615zpSGU",
+    "google_rating": 4.6,
+    "google_review_count": 4013,
+    "formatted_address": "155 W 51st St, New York, NY 10019, USA",
+    "latitude": 40.7614218,
+    "longitude": -73.9817558,
+    "opening_hours": [
+      {
+        "open": {
+          "day": 1,
+          "hour": 12,
+          "minute": 0
+        },
+        "close": {
+          "day": 1,
+          "hour": 14,
+          "minute": 30
+        }
+      },
+      {
+        "open": {
+          "day": 1,
+          "hour": 17,
+          "minute": 0
+        },
+        "close": {
+          "day": 1,
+          "hour": 22,
+          "minute": 30
+        }
+      },
+      {
+        "open": {
+          "day": 2,
+          "hour": 12,
+          "minute": 0
+        },
+        "close": {
+          "day": 2,
+          "hour": 14,
+          "minute": 30
+        }
+      },
+      {
+        "open": {
+          "day": 2,
+          "hour": 17,
+          "minute": 0
+        },
+        "close": {
+          "day": 2,
+          "hour": 22,
+          "minute": 30
+        }
+      },
+      {
+        "open": {
+          "day": 3,
+          "hour": 12,
+          "minute": 0
+        },
+        "close": {
+          "day": 3,
+          "hour": 14,
+          "minute": 30
+        }
+      },
+      {
+        "open": {
+          "day": 3,
+          "hour": 17,
+          "minute": 0
+        },
+        "close": {
+          "day": 3,
+          "hour": 22,
+          "minute": 30
+        }
+      },
+      {
+        "open": {
+          "day": 4,
+          "hour": 12,
+          "minute": 0
+        },
+        "close": {
+          "day": 4,
+          "hour": 14,
+          "minute": 30
+        }
+      },
+      {
+        "open": {
+          "day": 4,
+          "hour": 17,
+          "minute": 0
+        },
+        "close": {
+          "day": 4,
+          "hour": 22,
+          "minute": 30
+        }
+      },
+      {
+        "open": {
+          "day": 5,
+          "hour": 12,
+          "minute": 0
+        },
+        "close": {
+          "day": 5,
+          "hour": 14,
+          "minute": 30
+        }
+      },
+      {
+        "open": {
+          "day": 5,
+          "hour": 17,
+          "minute": 0
+        },
+        "close": {
+          "day": 5,
+          "hour": 23,
+          "minute": 0
+        }
+      },
+      {
+        "open": {
+          "day": 6,
+          "hour": 17,
+          "minute": 0
+        },
+        "close": {
+          "day": 6,
+          "hour": 23,
+          "minute": 0
+        }
+      }
+    ],
+    "is_open_now": true,
+    "website": "https://www.le-bernardin.com/home",
+    "phone": "(212) 554-1515",
+    "google_maps_url": "https://maps.google.com/?cid=7298340055988969067&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "last_updated": "2025-10-16 19:02:59"
+  },
+  {
+    "rank": 4,
+    "name": "Kabawa",
+    "rating": 4.7,
+    "review_count": 63,
+    "price_range": "$100+",
+    "cuisine": "Caribbean",
+    "description": "The first stand-alone\n              restaurant from the chef Paul Carmichael, a Barbados native and longtime Momofuku chef. Expect exuberant,\n              richly spiced Caribbean cuisine made with care and served with palpable joy. Ranked No. 4 on The Times’s\n              2025 list of best New York City restaurants.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npN4a_6z6wsMG2u9GhTinN9bHYMdKSkXdjVBxQPljlZp4oOJaIseCRnmk3Lel017zR62KEjqt1bos3yxQmnSPu7EBNV1FUX6CtQbhHr3eSZgcdj5uk9we0Xwc4grGQM8AtBR0Wjpw=w80-h106-k-no",
+    "place_id": "ChIJ685zLlZZwokRiEoiYj-Iyvg",
+    "google_rating": 4.7,
+    "google_review_count": 63,
+    "formatted_address": "8 Extra Pl, New York, NY 10003, USA",
+    "latitude": 40.7248683,
+    "longitude": -73.9914685,
+    "opening_hours": [
+      {
+        "open": {
+          "day": 2,
+          "hour": 17,
+          "minute": 30
+        },
+        "close": {
+          "day": 2,
+          "hour": 22,
+          "minute": 0
+        }
+      },
+      {
+        "open": {
+          "day": 3,
+          "hour": 17,
+          "minute": 30
+        },
+        "close": {
+          "day": 3,
+          "hour": 22,
+          "minute": 0
+        }
+      },
+      {
+        "open": {
+          "day": 4,
+          "hour": 17,
+          "minute": 30
+        },
+        "close": {
+          "day": 4,
+          "hour": 22,
+          "minute": 0
+        }
+      },
+      {
+        "open": {
+          "day": 5,
+          "hour": 17,
+          "minute": 30
+        },
+        "close": {
+          "day": 5,
+          "hour": 22,
+          "minute": 0
+        }
+      },
+      {
+        "open": {
+          "day": 6,
+          "hour": 17,
+          "minute": 30
+        },
+        "close": {
+          "day": 6,
+          "hour": 22,
+          "minute": 0
+        }
+      }
+    ],
+    "is_open_now": true,
+    "website": "https://www.momofuku.com/restaurants/kabawa",
+    "phone": "(646) 790-8747",
+    "google_maps_url": "https://maps.google.com/?cid=17927291072512412296&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "last_updated": "2025-10-16 19:03:00"
+  },
+  {
+    "rank": 5,
+    "name": "Ha's Snack Bar",
+    "rating": 4.4,
+    "review_count": 128,
+    "price_range": "$50–100",
+    "cuisine": "Restaurant",
+    "description": "The first brick-and-mortar\n              space for a longtime pop-up restaurant where dishes inspired by Vietnamese, French and other cuisines come\n              together in creative and striking ways. Ranked No. 5 on The Times’s 2025 list of best New York City\n              restaurants.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrpJ-kQ3nJKs2i0yowbxdYMySKH8NA3PEOsZX_Ko8OCR7wyu4mzssj07DIeFJJ8zSN8cDyTCJPYCyXKtTwsudAI_vO3H8chBxDI6_FPcdrYoU6-EXlrMWUk9pECQYCp9rAuormWVnI_Guhz=w80-h106-k-no",
+    "place_id": "ChIJ--ORRABZwokRjpPKbOlCC1k",
+    "google_rating": 4.4,
+    "google_review_count": 128,
+    "formatted_address": "297 Broome St, New York, NY 10002, USA",
+    "latitude": 40.7185522,
+    "longitude": -73.9921884,
+    "opening_hours": [
+      {
+        "open": {
+          "day": 2,
+          "hour": 17,
+          "minute": 30
+        },
+        "close": {
+          "day": 2,
+          "hour": 22,
+          "minute": 30
+        }
+      },
+      {
+        "open": {
+          "day": 3,
+          "hour": 17,
+          "minute": 30
+        },
+        "close": {
+          "day": 3,
+          "hour": 22,
+          "minute": 30
+        }
+      },
+      {
+        "open": {
+          "day": 4,
+          "hour": 17,
+          "minute": 30
+        },
+        "close": {
+          "day": 4,
+          "hour": 22,
+          "minute": 30
+        }
+      },
+      {
+        "open": {
+          "day": 5,
+          "hour": 17,
+          "minute": 30
+        },
+        "close": {
+          "day": 5,
+          "hour": 22,
+          "minute": 30
+        }
+      },
+      {
+        "open": {
+          "day": 6,
+          "hour": 17,
+          "minute": 30
+        },
+        "close": {
+          "day": 6,
+          "hour": 22,
+          "minute": 30
+        }
+      }
+    ],
+    "is_open_now": true,
+    "website": "https://www.instagram.com/has_dac_biet/",
+    "phone": null,
+    "google_maps_url": "https://maps.google.com/?cid=6416295664439432078&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "last_updated": "2025-10-16 19:03:01"
+  }
+]

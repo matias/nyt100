@@ -1,94 +1,143 @@
-# NYT 100 Best Restaurants
+# NYT Top 100 NYC Restaurants
 
-![Status](https://img.shields.io/badge/status-maintenance%20mode-orange)
-
-A simple way to visualize and filter the New York Times' 100 best restaurants list in a dedicated web app. Explore restaurants on an interactive map, filter by cuisine, price range, neighborhood, and more.
-
-This app is deployed at https://nyt100.vercel.app, feel free to use it there!
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18+ and npm
-- Mapbox API key (required)
-- Google Places API key (optional, for data enrichment scripts)
-
-### Installation
-
-1. Install dependencies:
-
-```bash
-npm install
-```
-
-2. Set up environment variables:
-
-Create a `.env.local` file in the `app` directory (see `.env.example` for reference):
-
-```bash
-# Required: Mapbox API token for the interactive map
-NEXT_PUBLIC_MAPBOX_TOKEN=your_mapbox_token_here
-
-# Optional: Google Places API key (for data enrichment scripts)
-GOOGLE_PLACES_API_KEY=your_google_places_api_key_here
-```
-
-### Obtaining API Keys
-
-#### Mapbox API Key (Required)
-
-1. Sign up for a free account at [mapbox.com](https://account.mapbox.com/)
-2. Navigate to [Access Tokens](https://account.mapbox.com/access-tokens/)
-3. Create a new access token or use the default public token
-4. Copy the token and add it to your `.env.local` file as `NEXT_PUBLIC_MAPBOX_TOKEN`
-
-#### Google Places API Key (Optional)
-
-The Google Places API key is only needed if you plan to run the data enrichment scripts. The app itself works with pre-processed data.
-
-1. Go to [Google Cloud Console](https://console.cloud.google.com/)
-2. Create a new project or select an existing one
-3. Enable the [Places API (New)](https://console.cloud.google.com/apis/library/places-backend.googleapis.com)
-4. Go to [Credentials](https://console.cloud.google.com/apis/credentials) and create an API key
-5. (Recommended) Restrict the API key to only the Places API
-6. Add the key to your `.env.local` file as `GOOGLE_PLACES_API_KEY`
-
-**Note:** Google Places API usage may incur costs. Check the [pricing page](https://developers.google.com/maps/documentation/places/web-service/pricing) for details.
-
-### Running the Application
-
-Start the development server:
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
+A React/Next.js application for exploring and filtering the New York Times' top 100 restaurants in New York City, featuring an interactive map and comprehensive filtering options.
 
 ## Features
 
-- **Interactive Map**: View all restaurants on a Mapbox-powered map with clickable markers
-- **Advanced Filtering**: Filter by search query, price range, cuisine type, neighborhood, and more
-- **Restaurant Details**: View ratings, reviews, descriptions, and location information
-- **Responsive Design**: Works seamlessly on desktop and mobile devices
+- **Interactive Map**: View restaurants on a Mapbox-powered map with markers color-coded by price range
+- **Comprehensive Filtering**: Filter by search query, price range, cuisine type, neighborhood, proximity, and opening hours
+- **Restaurant List**: Browse restaurants with detailed information including ratings, reviews, and descriptions
+- **Responsive Design**: Works on desktop and mobile devices
+- **Data Enrichment**: Python scripts to parse HTML data and enrich with Google Places API
 
 ## Project Structure
 
-- `components/` - React components (MapboxMap, RestaurantList, FilterPanel)
-- `types/` - TypeScript type definitions
-- `public/data/` - Restaurant data JSON files
-- `app/` - Next.js app router pages and layout
-
-## Build for Production
-
-```bash
-npm run build
-npm start
+```
+nyt100/
+├── app/                          # Next.js application
+│   ├── components/              # React components
+│   │   ├── MapboxMap.tsx        # Interactive map component
+│   │   ├── RestaurantList.tsx   # Restaurant list display
+│   │   └── FilterPanel.tsx     # Filtering controls
+│   ├── types/                   # TypeScript type definitions
+│   │   └── restaurant.ts        # Restaurant data types
+│   ├── public/data/             # Restaurant data files
+│   └── ...
+├── scripts/                     # Python data processing scripts
+│   ├── parse_html.py           # Parse HTML dump to JSON
+│   ├── enrich_with_places_api.py # Enrich with Google Places API
+│   └── update_restaurant_data.py # Update data script
+├── data/                       # Raw and processed data
+│   ├── list-dump.html          # HTML dump from Google Maps
+│   └── restaurants_parsed.json # Parsed restaurant data
+└── requirements.txt            # Python dependencies
 ```
 
-## Learn More
+## Setup Instructions
 
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Mapbox GL JS](https://docs.mapbox.com/mapbox-gl-js/)
-- [Google Places API](https://developers.google.com/maps/documentation/places/web-service)
+### 1. Install Dependencies
+
+**For the Next.js app:**
+```bash
+cd app
+npm install
+```
+
+**For Python scripts:**
+```bash
+pip install -r requirements.txt
+```
+
+### 2. Configure Environment Variables
+
+Create a `.env.local` file in the `app` directory:
+
+```bash
+# Mapbox Configuration
+NEXT_PUBLIC_MAPBOX_TOKEN=your_mapbox_token_here
+
+# Google Places API Configuration (optional, for data enrichment)
+GOOGLE_PLACES_API_KEY=your_google_places_api_key_here
+```
+
+**Get your Mapbox token:**
+1. Sign up at [mapbox.com](https://account.mapbox.com/access-tokens/)
+2. Create a new access token
+3. Add it to your `.env.local` file
+
+**Get your Google Places API key (optional):**
+1. Go to [Google Cloud Console](https://console.cloud.google.com/apis/credentials)
+2. Enable the Places API (New)
+3. Create an API key
+4. Add it to your `.env.local` file
+
+### 3. Run the Application
+
+```bash
+cd app
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) to view the application.
+
+## Data Processing
+
+### Parse HTML Data (Already Complete)
+The HTML dump has been parsed into `data/restaurants_parsed.json` with the following information:
+- Rank, name, rating, review count
+- Price range, cuisine type, description
+- Image URL
+
+### Enrich with Google Places API (Optional)
+To add location data, opening hours, and contact information:
+
+```bash
+python scripts/enrich_with_places_api.py
+```
+
+This will create `data/restaurants_enriched.json` with additional data:
+- Place ID, coordinates, formatted address
+- Opening hours, website, phone number
+- Google Maps URL
+
+**Note:** This requires a Google Places API key and may incur costs based on API usage.
+
+## Usage
+
+### Filtering Restaurants
+- **Search**: Type restaurant names, cuisines, or descriptions
+- **Price Range**: Select one or more price ranges ($1–10, $10–20, etc.)
+- **Cuisine**: Filter by cuisine type (Italian, Korean, etc.)
+- **Neighborhood**: Filter by NYC neighborhoods
+- **Near Me**: Sort by distance from your location (requires location permission)
+- **Open for Lunch**: Filter by lunch hours (requires enriched data)
+
+### Map Interaction
+- **Markers**: Color-coded by price range (red=$100+, orange=$50-100, green=$25-50, blue=other)
+- **Click Markers**: View restaurant details in popup
+- **Select Restaurant**: Click on list items to highlight on map
+- **Auto-fit**: Map automatically adjusts to show all filtered results
+
+## Development
+
+### Adding New Features
+1. Update TypeScript types in `types/restaurant.ts`
+2. Modify components in `components/`
+3. Update filtering logic in `app/page.tsx`
+
+### Data Updates
+1. Update `data/list-dump.html` with new restaurant data
+2. Run `python scripts/parse_html.py` to parse new data
+3. Optionally run `python scripts/enrich_with_places_api.py` for enrichment
+4. Copy updated JSON to `app/public/data/`
+
+## Technologies Used
+
+- **Frontend**: Next.js 15, React 19, TypeScript, Tailwind CSS
+- **Mapping**: Mapbox GL JS, react-map-gl
+- **Data Processing**: Python, BeautifulSoup, Google Places API
+- **Deployment**: Vercel-ready
+
+## License
+
+This project is for educational purposes. Restaurant data is sourced from the New York Times.
