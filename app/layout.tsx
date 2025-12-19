@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "NYT 100",
-  description: "Easily navigate the NYT top 100 restaurants",
+  title: "NYC Best Restaurants",
+  description: "Easily navigate the New York Times and New York Magazine's best restaurants in New York City",
 };
 
 export default function RootLayout({
