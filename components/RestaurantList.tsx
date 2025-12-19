@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import Image from 'next/image';
 import { Restaurant } from '@/types/restaurant';
 
 interface RestaurantListProps {
@@ -79,16 +80,16 @@ const formatTime = (hour: number, minute: number = 0) => {
 };
 
 export default function RestaurantList({ restaurants, selectedRestaurant, onRestaurantSelect }: RestaurantListProps) {
-  const [expandedHours, setExpandedHours] = useState<Set<number>>(new Set());
-  const restaurantRefs = useRef<Map<number, HTMLDivElement>>(new Map());
+  const [expandedHours, setExpandedHours] = useState<Set<string>>(new Set());
+  const restaurantRefs = useRef<Map<string, HTMLDivElement>>(new Map());
   const listContainerRef = useRef<HTMLDivElement>(null);
   
-  const toggleHours = (rank: number) => {
+  const toggleHours = (key: string) => {
     const newExpanded = new Set(expandedHours);
-    if (newExpanded.has(rank)) {
-      newExpanded.delete(rank);
+    if (newExpanded.has(key)) {
+      newExpanded.delete(key);
     } else {
-      newExpanded.add(rank);
+      newExpanded.add(key);
     }
     setExpandedHours(newExpanded);
   };
@@ -96,7 +97,9 @@ export default function RestaurantList({ restaurants, selectedRestaurant, onRest
   // Scroll to selected restaurant when selection changes
   useEffect(() => {
     if (selectedRestaurant && listContainerRef.current) {
-      const restaurantElement = restaurantRefs.current.get(selectedRestaurant.rank);
+      // Use place_id as key (fallback to combined_order if no place_id)
+      const key = selectedRestaurant.place_id ?? `restaurant-${selectedRestaurant.combined_order ?? selectedRestaurant.rank ?? 0}`;
+      const restaurantElement = restaurantRefs.current.get(key);
       if (restaurantElement) {
         // Scroll the restaurant into view with smooth behavior
         restaurantElement.scrollIntoView({
@@ -124,22 +127,25 @@ export default function RestaurantList({ restaurants, selectedRestaurant, onRest
       {/* List */}
       <div ref={listContainerRef} className="flex-1 overflow-y-auto">
         <div className="divide-y divide-gray-200 dark:divide-gray-700">
-          {restaurants.map((restaurant) => (
+          {restaurants.map((restaurant) => {
+            // Use place_id as key (fallback to combined_order if no place_id)
+            const key = restaurant.place_id ?? `restaurant-${restaurant.combined_order ?? restaurant.rank ?? 0}`;
+            return (
             <div
-              key={restaurant.rank}
+              key={key}
               ref={(el) => {
                 if (el) {
-                  restaurantRefs.current.set(restaurant.rank, el);
+                  restaurantRefs.current.set(key, el);
                 } else {
-                  restaurantRefs.current.delete(restaurant.rank);
+                  restaurantRefs.current.delete(key);
                 }
               }}
               className={`p-4 cursor-pointer transition-colors hover:bg-gray-50 dark:hover:bg-gray-700 ${
-                selectedRestaurant?.rank === restaurant.rank ? 'bg-blue-50 dark:bg-blue-900 border-l-4 border-blue-500' : ''
+                selectedRestaurant?.place_id === restaurant.place_id ? 'bg-blue-50 dark:bg-blue-900 border-l-4 border-blue-500' : ''
               }`}
               onClick={() => {
                 // If clicking the same restaurant that's already selected, deselect it
-                if (selectedRestaurant?.rank === restaurant.rank) {
+                if (selectedRestaurant?.place_id === restaurant.place_id) {
                   onRestaurantSelect(null);
                 } else {
                   onRestaurantSelect(restaurant);
@@ -147,13 +153,6 @@ export default function RestaurantList({ restaurants, selectedRestaurant, onRest
               }}
             >
               <div className="flex items-start space-x-3">
-                {/* Rank */}
-                <div className="flex-shrink-0">
-                  <div className="w-8 h-8 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center text-sm font-medium text-gray-600 dark:text-gray-300">
-                    {restaurant.rank}
-                  </div>
-                </div>
-
                 {/* Content */}
                 <div className="flex-1 min-w-0">
                   {/* Name and Rating */}
@@ -162,6 +161,32 @@ export default function RestaurantList({ restaurants, selectedRestaurant, onRest
                       <h3 className="text-sm font-medium text-gray-900 dark:text-white">
                         {restaurant.name}
                       </h3>
+                      {/* Source Icons */}
+                      <div className="flex items-center gap-1">
+                        {restaurant.sources?.includes('NYT') && (
+                          <Image 
+                            src="/favicons/nyt.ico" 
+                            alt="NYT" 
+                            width={12}
+                            height={12}
+                            className="w-3 h-3 mr-1"
+                            title="New York Times"
+                            style={{ background: 'white' }}
+                            unoptimized
+                          />
+                        )}
+                        {restaurant.sources?.includes('NYM') && (
+                          <Image 
+                            src="/favicons/nym.ico" 
+                            alt="NYM" 
+                            width={12}
+                            height={12}
+                            className="w-3 h-3 mr-1"
+                            title="New York Magazine"
+                            unoptimized
+                          />
+                        )}
+                      </div>
                       <div className="flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400">
                         {restaurant.website && (
                           <>
@@ -260,13 +285,13 @@ export default function RestaurantList({ restaurants, selectedRestaurant, onRest
                       <button
                         onClick={(e) => {
                           e.stopPropagation();
-                          toggleHours(restaurant.rank);
+                          toggleHours(key);
                         }}
                         className="text-xs text-blue-600 dark:text-blue-400 hover:underline flex items-center"
                       >
-                        {expandedHours.has(restaurant.rank) ? '▼' : '▶'} Hours
+                        {expandedHours.has(key) ? '▼' : '▶'} Hours
                       </button>
-                      {expandedHours.has(restaurant.rank) && (
+                      {expandedHours.has(key) && (
                         <div className="mt-1 text-xs text-gray-700 dark:text-gray-300 space-y-1">
                           {formatOpeningHours(restaurant.opening_hours)?.map((hours, index) => (
                             <div key={index}>{hours}</div>
@@ -278,7 +303,8 @@ export default function RestaurantList({ restaurants, selectedRestaurant, onRest
                 </div>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>

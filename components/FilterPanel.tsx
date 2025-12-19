@@ -31,6 +31,13 @@ export default function FilterPanel({ filters, onFiltersChange, filteredCount }:
     onFiltersChange({ ...filters, boroughs: newBoroughs });
   };
 
+  const handlePublicationToggle = (publication: string) => {
+    const newPublications = filters.publications.includes(publication)
+      ? filters.publications.filter(p => p !== publication)
+      : [...filters.publications, publication];
+    onFiltersChange({ ...filters, publications: newPublications });
+  };
+
   const handleSearchChange = (value: string) => {
     onFiltersChange({ ...filters, searchQuery: value });
     if (!value) {
@@ -43,13 +50,15 @@ export default function FilterPanel({ filters, onFiltersChange, filteredCount }:
       searchQuery: '',
       boroughs: [],
       openForLunch: false,
+      publications: ['NYT', 'NYM'], // Reset to default (both selected)
     });
     setShowSearchInput(false);
   };
 
   const hasActiveFilters = filters.searchQuery || 
     filters.boroughs.length > 0 || 
-    filters.openForLunch;
+    filters.openForLunch ||
+    (filters.publications.length !== 2); // Active if not both selected
 
   return (
     <div className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
@@ -65,6 +74,28 @@ export default function FilterPanel({ filters, onFiltersChange, filteredCount }:
             }`}
           >
             Lunch
+          </button>
+
+          {/* Publication Filters */}
+          <button
+            onClick={() => handlePublicationToggle('NYT')}
+            className={`flex-shrink-0 px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
+              filters.publications.includes('NYT')
+                ? 'bg-blue-600 text-white hover:bg-blue-700'
+                : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'
+            }`}
+          >
+            NYT
+          </button>
+          <button
+            onClick={() => handlePublicationToggle('NYM')}
+            className={`flex-shrink-0 px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
+              filters.publications.includes('NYM')
+                ? 'bg-blue-600 text-white hover:bg-blue-700'
+                : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'
+            }`}
+          >
+            NYM
           </button>
 
           {/* Borough Toggles */}

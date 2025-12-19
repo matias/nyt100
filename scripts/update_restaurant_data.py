@@ -13,7 +13,8 @@ import requests
 from dotenv import load_dotenv
 
 # Load environment variables
-load_dotenv()
+load_dotenv('.env.local')
+load_dotenv()  # Also try default .env file
 
 # Google Places API (New) configuration
 GOOGLE_PLACES_API_KEY = os.getenv('GOOGLE_PLACES_API_KEY')
@@ -26,8 +27,8 @@ def get_place_details(place_id: str) -> Optional[Dict]:
     if not GOOGLE_PLACES_API_KEY:
         return None
     
-    # Field mask for place details (New API format)
-    field_mask = "id,displayName,formattedAddress,location,regularOpeningHours,websiteUri,googleMapsUri,nationalPhoneNumber,rating,userRatingCount"
+    # Field mask for place details (New API format) - include editorialSummary
+    field_mask = "id,displayName,formattedAddress,location,regularOpeningHours,websiteUri,googleMapsUri,nationalPhoneNumber,rating,userRatingCount,editorialSummary"
     
     headers = {
         'X-Goog-Api-Key': GOOGLE_PLACES_API_KEY,
@@ -63,8 +64,17 @@ def update_restaurant_data(restaurant: Dict) -> Dict:
         return restaurant
     
     # Update dynamic fields only (keep static data from original parse)
-    restaurant['google_rating'] = details.get('rating', {}).get('value')
+    # Handle rating extraction safely (can be dict or float)
+    rating = details.get('rating', {})
+    if isinstance(rating, dict):
+        restaurant['google_rating'] = rating.get('value')
+        restaurant['rating'] = rating.get('value')  # Also set main rating field
+    elif isinstance(rating, (int, float)):
+        restaurant['google_rating'] = rating
+        restaurant['rating'] = rating
+    
     restaurant['google_review_count'] = details.get('userRatingCount')
+    restaurant['review_count'] = details.get('userRatingCount')
     restaurant['formatted_address'] = details.get('formattedAddress')
     
     # Coordinates
@@ -84,6 +94,13 @@ def update_restaurant_data(restaurant: Dict) -> Dict:
     restaurant['phone'] = details.get('nationalPhoneNumber')
     restaurant['google_maps_url'] = details.get('googleMapsUri')
     
+    # Update description from editorialSummary
+    editorial_summary = details.get('editorialSummary', {})
+    if isinstance(editorial_summary, dict):
+        description_text = editorial_summary.get('text') or editorial_summary.get('overview')
+        if description_text:
+            restaurant['description'] = description_text
+    
     # Update timestamp
     restaurant['last_updated'] = time.strftime('%Y-%m-%d %H:%M:%S')
     
@@ -99,13 +116,14 @@ def main():
         print("Get your API key from: https://console.cloud.google.com/apis/credentials")
         return
     
-    # Paths
-    input_file = Path(__file__).parent.parent / 'data' / 'restaurants_enriched.json'
-    output_file = Path(__file__).parent.parent / 'data' / 'restaurants_enriched.json'
+    # Paths - use merged enriched data if available, otherwise fall back to original
+    merged_file = Path(__file__).parent.parent / 'data' / 'restaurants_enriched_nym.json'
+    input_file = merged_file if merged_file.exists() else Path(__file__).parent.parent / 'data' / 'restaurants_enriched.json'
+    output_file = input_file
     
     if not input_file.exists():
         print(f"Error: Input file not found at {input_file}")
-        print("Run enrich_with_places_api.py first to create the initial enriched data")
+        print("Run enrich_with_places_api.py or enrich_nym_restaurants.py first")
         return
     
     # Load existing enriched restaurants

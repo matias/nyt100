@@ -14,6 +14,7 @@ export default function Home() {
     searchQuery: '',
     boroughs: [],
     openForLunch: false,
+    publications: ['NYT', 'NYM'], // Default: show both
   });
 
   // Deselect restaurant when borough filters change
@@ -35,7 +36,7 @@ export default function Home() {
   useEffect(() => {
     const loadRestaurants = async () => {
       try {
-        const response = await fetch('/data/restaurants_parsed.json');
+        const response = await fetch('/data/restaurants.json');
         const data = await response.json();
         setRestaurants(data);
       } catch (error) {
@@ -51,6 +52,14 @@ export default function Home() {
   // Filter restaurants based on current filters
   const filteredRestaurants = useMemo(() => {
     let filtered = restaurants;
+
+    // Publication filter (NYT, NYM, or both)
+    if (filters.publications.length > 0) {
+      filtered = filtered.filter(restaurant => {
+        const sources = restaurant.sources || [];
+        return filters.publications.some(pub => sources.includes(pub));
+      });
+    }
 
     // Search query filter
     if (filters.searchQuery) {
@@ -127,6 +136,13 @@ export default function Home() {
         });
       });
     }
+
+    // Sort by combined_order
+    filtered.sort((a, b) => {
+      const orderA = a.combined_order ?? a.rank ?? 999;
+      const orderB = b.combined_order ?? b.rank ?? 999;
+      return orderA - orderB;
+    });
 
     return filtered;
   }, [restaurants, filters]);

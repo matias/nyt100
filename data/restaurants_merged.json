@@ -1,0 +1,2126 @@
+[
+  {
+    "rank": 1,
+    "name": "Semma",
+    "rating": 4.2,
+    "review_count": 1431,
+    "price_range": "$50–100",
+    "cuisine": "South Indian",
+    "description": "A deeply personal tribute to the chef Vijay Kumar’s upbringing in the South Indian state of Tamil Nadu and home to the city’s best dosa. Ranked No. 1 on The Times’s 2025 list of best New York City restaurants.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nq4UUj4D-nJzaNZIJjKR2TFkMTYdve_yJ_ilyQy2KFRthGZrU2uJ2zZZGSQaLPsERFSjIYrkhXepDGKcSt9HBQWxFuyzgFNluxMNcywW0s05W0G9RhSUhOtNuGNa6b8HC9L4p4Y=w122-h92-k-no",
+    "sources": [
+      "NYT",
+      "NYM"
+    ],
+    "nyt_rank": 1,
+    "nym_rank": 3,
+    "formatted_address": "60 Greenwich Ave.",
+    "website": "https://semma.nyc",
+    "combined_order": 1
+  },
+  {
+    "rank": 2,
+    "name": "ATOMIX",
+    "rating": 4.7,
+    "review_count": 471,
+    "price_range": "$100+",
+    "cuisine": "Korean",
+    "description": "Tasting menu restaurant known for its punchy, distinctly Korean flavors, understated service and use of modern presentation and techniques. Ranked No. 2 on The Times’s 2025 list of best New York City restaurants.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqmMGzbEACqybT7uY1VC4oXjlpCoG7KJ2acnnceRDipV8nkOtlDczszwsVGIOiVxHxQPrszVQwrXIc17sIVIujtjdU325LLI0yxbI3JMb33sLWmqQfZ9QY7hSoH_BehZ1z02dHYLg=w138-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 2,
+    "combined_order": 2
+  },
+  {
+    "rank": 3,
+    "name": "Le Bernardin",
+    "rating": 4.6,
+    "review_count": 4013,
+    "price_range": "$100+",
+    "cuisine": "French",
+    "description": "Elegant, airy Midtown institution specializing in ambitious seafood dishes. Known for attracting a well-heeled crowd and service that is charmingly French. Ranked No. 3 on The Times’s 2025 list of best New York City restaurants.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipMC-dJ9gfcpFIX8PS-8yPYhjCMfjl6q35zAn1t8=w147-h92-k-no",
+    "sources": [
+      "NYT",
+      "NYM"
+    ],
+    "nyt_rank": 3,
+    "nym_rank": 27,
+    "formatted_address": "155 W. 51st St.",
+    "website": "https://le-bernardin.com",
+    "combined_order": 3
+  },
+  {
+    "rank": 4,
+    "name": "Kabawa",
+    "rating": 4.7,
+    "review_count": 63,
+    "price_range": "$100+",
+    "cuisine": "Caribbean",
+    "description": "The first stand-alone restaurant from the chef Paul Carmichael, a Barbados native and longtime Momofuku chef. Expect exuberant,\n              richly spiced Caribbean cuisine made with care and served with palpable joy. Ranked No. 4 on The Times’s 2025 list of best New York City restaurants.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npN4a_6z6wsMG2u9GhTinN9bHYMdKSkXdjVBxQPljlZp4oOJaIseCRnmk3Lel017zR62KEjqt1bos3yxQmnSPu7EBNV1FUX6CtQbhHr3eSZgcdj5uk9we0Xwc4grGQM8AtBR0Wjpw=w80-h106-k-no",
+    "sources": [
+      "NYT",
+      "NYM"
+    ],
+    "nyt_rank": 4,
+    "nym_rank": 10,
+    "formatted_address": "8 Extra Pl.",
+    "website": "https://kabawa.com",
+    "combined_order": 4
+  },
+  {
+    "rank": 5,
+    "name": "Ha's Snack Bar",
+    "rating": 4.4,
+    "review_count": 128,
+    "price_range": "$50–100",
+    "cuisine": "Restaurant",
+    "description": "The first brick-and-mortar space for a longtime pop-up restaurant where dishes inspired by Vietnamese, French and other cuisines come together in creative and striking ways. Ranked No. 5 on The Times’s 2025 list of best New York City restaurants.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrpJ-kQ3nJKs2i0yowbxdYMySKH8NA3PEOsZX_Ko8OCR7wyu4mzssj07DIeFJJ8zSN8cDyTCJPYCyXKtTwsudAI_vO3H8chBxDI6_FPcdrYoU6-EXlrMWUk9pECQYCp9rAuormWVnI_Guhz=w80-h106-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 5,
+    "combined_order": 5
+  },
+  {
+    "rank": 6,
+    "name": "King",
+    "rating": 4.2,
+    "review_count": 520,
+    "price_range": "$100+",
+    "cuisine": "Italian",
+    "description": "Beloved, nearly decade-old restaurant that’s kept true to its owners’ original vision: Open a deeply personal, Southern French- and Italian-accented restaurant on a sunny corner in the West Village with a seasonal menu. Ranked No. 6 on The Times’s 2025 list of best New York City restaurants.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipP1pOfvFg8PPH5oVy5jdX_aA_cqOtnCe1mED7Yw=w138-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 6,
+    "combined_order": 6
+  },
+  {
+    "rank": 7,
+    "name": "Penny",
+    "rating": 4.5,
+    "review_count": 188,
+    "price_range": "$100+",
+    "cuisine": "Seafood",
+    "description": "East Village seafood counter known for dishes that are beguiling in their simplicity and cunning in their execution. Ranked No.\n              7 on The Times’s 2025 list of best New York City restaurants.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipNzeuCOfOo358ZeMx4mcXw07g_xmi-zzlCA0MW4=w138-h92-k-no",
+    "sources": [
+      "NYT",
+      "NYM"
+    ],
+    "nyt_rank": 7,
+    "nym_rank": 32,
+    "formatted_address": "90 E. 10th St.",
+    "website": "https://penny-nyc.com",
+    "combined_order": 7
+  },
+  {
+    "rank": 8,
+    "name": "Sushi Sho",
+    "rating": 4.5,
+    "review_count": 62,
+    "price_range": "$100+",
+    "cuisine": "Restaurant",
+    "description": "Tucked-away omakase restaurant from the renowned sushi chef Keiji Nakazawa, where he shows the transformative power of his ingredients. Ranked No. 8 on The Times’s 2025 list of best New York City restaurants.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipNTOPHFIhjXwemHyQfsaYfrUO85XBDmXB_af4Ze=w137-h92-k-no",
+    "sources": [
+      "NYT",
+      "NYM"
+    ],
+    "nyt_rank": 8,
+    "nym_rank": 34,
+    "formatted_address": "3 E. 41st St.",
+    "website": "https://instagram.com/sushishonyc",
+    "combined_order": 8
+  },
+  {
+    "rank": 9,
+    "name": "Mountain House Flushing 川山甲",
+    "rating": 4.5,
+    "review_count": 1840,
+    "price_range": "$30–50",
+    "cuisine": "Sichuan",
+    "description": "Queens location of a popular and influential Chinese restaurant specializing in dishes from the Sichuan region. Ranked No. 9 on The Times’s 2025 list of best New York City restaurants.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipMQNto7ntOOe5i0YX9rDcRX1aAs1_dk_YbqBlfG=w163-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 9,
+    "combined_order": 9
+  },
+  {
+    "rank": 10,
+    "name": "Tatiana by Kwame Onwuachi",
+    "rating": 4.3,
+    "review_count": 751,
+    "price_range": "$100+",
+    "cuisine": "Caribbean",
+    "description": "The chef Kwame Onwuachi’s ode to the Afro-Caribbean culinary diaspora and New York City food culture. Ranked No. 10 on The Times’s 2025 list of best New York City restaurants.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npm0yMKt-g_8EHhFHfSGEIZQ36qFyuX1lmJpoZ5O7cD5pgEXrLfZYTVdKsg5V-taexkejMCg2X4lNL4gSap5f9K5E404KmlS3OLrCwctPWOVXiriotklqKVZkxaRxlmbMDoymO_=w135-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 10,
+    "combined_order": 10
+  },
+  {
+    "rank": 11,
+    "name": "188 Bakery Cuchifritos",
+    "rating": 4.3,
+    "review_count": 1087,
+    "price_range": "$10–20",
+    "cuisine": "Puerto Rican",
+    "description": "Bronx \"pork palace\" known for its pernil and cuajitos among other pork-centric specialties from Puerto Rico and the Dominican Republic.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npucN5rWkgL2Gxg-Vi23tVNq-2B_OqZi9_1u9EccS5v-4gKpt9nNz4FWkM9OoMvakYWVopkOOM1-65vENXZGuZj7ktyed_2nQdo5t9xTVXtxWJjPThvXLQTGmZBNDad12irzgI=w122-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 11,
+    "combined_order": 11
+  },
+  {
+    "rank": 12,
+    "name": "A&A Bake Doubles and Roti",
+    "rating": 4.3,
+    "review_count": 1121,
+    "price_range": "$1–10",
+    "cuisine": "Caribbean",
+    "description": "Bedford-Stuyvesant restaurant specializing in doubles — chewy, stretchy bara bursting at the seams with mildly sweet and warmly spiced chana.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npdZv82iCLDGvwCCOE7fweaBKH3AtcfbqdPhvPu5yILipb3DdEfjObQ-VifRHoY0VbEeKtHQfGfcd-_bI7jJLRINs1S_DYW18HYSZzOBueL017_8UFC6pt5B0j9_TZNXZNPO9LxS6kSRoo=w80-h106-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 12,
+    "combined_order": 12
+  },
+  {
+    "rank": 13,
+    "name": "Abuqir",
+    "rating": 4.2,
+    "review_count": 955,
+    "price_range": "$30–50",
+    "cuisine": "Seafood",
+    "description": "Longtime Egyptian haunt known for its choose-your-own-adventure approach to whole fish and other well-executed Middle Eastern dishes.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npupswYGd3o79QeMi1FDJavxTL5PyQ1c6CjGzQocOwRrZC2BzFPN56bxKnAiORSYrWrtEgUsjp-KD7-ZmOFYUplItxWvhrxbjT5gqhdoSUp3RhZ2SPbzziQyZlqdUD08QKdkM0O=w80-h106-k-no",
+    "sources": [
+      "NYT",
+      "NYM"
+    ],
+    "nyt_rank": 13,
+    "nym_rank": 41,
+    "formatted_address": "19 Steinway St., Astoria",
+    "combined_order": 13
+  },
+  {
+    "rank": 14,
+    "name": "Aska",
+    "rating": 4.6,
+    "review_count": 533,
+    "price_range": "$100+",
+    "cuisine": "Scandinavian",
+    "description": "Scandinavian restaurant from the chef Fredrik Berselius, known for inventive cooking and a vibrant tasting menu that manages to be playful, soulful and entirely fresh.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipNokwMwQzgUwvviSjBnU0JIn30gZAlVMgMdUeqB=w137-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 14,
+    "combined_order": 14
+  },
+  {
+    "rank": 15,
+    "name": "Atoboy",
+    "rating": 4.5,
+    "review_count": 1310,
+    "price_range": "$100+",
+    "cuisine": "Korean",
+    "description": "Eclectic Korean-influenced restaurant serving a $75 prix-fixe menu featuring dishes like kimchi with beurre blanc and buchu muchim with chimichurri.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqNu6Fok6rQ1jTWjnR7m40fxtF2ZcF4vJbR5U8hVh9Gavb5OLR3PAXrDLJ6_0liZJeswHCjd2M2AjPGDQdO9avRfXbVkKxvXSpQXCtr__C5FrqVvEEvZjtMpQUtbM69lWmFKW08=w80-h106-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 15,
+    "combined_order": 15
+  },
+  {
+    "rank": 16,
+    "name": "Bar Jamon",
+    "rating": 4.3,
+    "review_count": 273,
+    "price_range": "$50–100",
+    "cuisine": "Spanish",
+    "description": "Bar arm of Casa Mono featuring aged Cava, musky vintage Rioja and other deep cuts, as well as a full menu.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipO0k9ouUsXl8fUUIZJ9ceec5oonTW-K2uZ1jjCJ=w80-h120-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 16,
+    "combined_order": 16
+  },
+  {
+    "rank": 17,
+    "name": "Barbuto",
+    "rating": 4.3,
+    "review_count": 1070,
+    "price_range": "$50–100",
+    "cuisine": "Italian",
+    "description": "Beloved Manhattan institution from the chef Jonathan Waxman, a Chez Panisse alum. Known for its unimprovable roast chicken with a salsa verde made with herbs, capers and anchovies.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipP0XtP3MrFGwXQK_s6Z6H1o995tLmblUziqW3DR=w138-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 17,
+    "combined_order": 17
+  },
+  {
+    "rank": 18,
+    "name": "Barney Greengrass",
+    "rating": 4.4,
+    "review_count": 1515,
+    "price_range": "$20–30",
+    "cuisine": "Breakfast",
+    "description": "Iconic Upper West Side delicatessen and appetizing shop specializing in smoked fish, matzo ball soup and other Jewish staples.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npDc2Wbj6Przjbwvrj62LucHOK4Ur57TWmJj3nT093tR7S8ZksXy4tGNzNMeuidhm6o9pz_qVJJkAAoun-FWZWjvigmwzaRxA9fSuRZLJrJBZdEAVrG6GwjUQqNkFnrB7csY4jWORcfqhFy=w116-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 18,
+    "combined_order": 18
+  },
+  {
+    "rank": 19,
+    "name": "Birria-Landia",
+    "rating": 4.7,
+    "review_count": 2464,
+    "price_range": "$10–20",
+    "cuisine": "Tacos",
+    "description": "First location of the popular food truck that put Tijuana-style birria on the map in New York City.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrKX4j-aFIWKo4VddbPF2jXi1XKMLQeJyOeu32miWUGDwTHAQ8dQB-tRW3ejvH8sz3CpOaVEeQVFh_tWJIbIIu1CqCCnCWol6qMl0gHEbsqeJIJrg5AaBRypPCvqrTrF6Lp4BX5NYQWCjzN=w122-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 19,
+    "combined_order": 19
+  },
+  {
+    "rank": 20,
+    "name": "Birria-Landia NYC",
+    "rating": 4.8,
+    "review_count": 309,
+    "price_range": "$10–20",
+    "cuisine": "Tacos",
+    "description": "Manhattan location of the popular food truck that put Tijuana-style birria on the map in New York City.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrx8S3TO0rGoUuEaOF-2k2Vg4MaCGSV39Q9DUm1Xke3nsSOLcY8DHUy5SCGapJIgKd1x9lrdKuhziVelyOHss6MRN2iGJv-ZXG-tB8D-vVp68WyPpk5Fm2pcFUh8eCP1JqiDqQ8=w80-h106-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 20,
+    "combined_order": 20
+  },
+  {
+    "rank": 21,
+    "name": "Birria-Landia",
+    "rating": 4.8,
+    "review_count": 1276,
+    "price_range": "$10–20",
+    "cuisine": "Tacos",
+    "description": "Brooklyn location of the popular food truck that put Tijuana-style birria on the map in New York City.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nq8x7XjWL79ehHG8WHOSAzpzkECWB3spOEHBZxnvWOkDall5X2qN5HlPvZHXwAEfKOVA8pDzCKWe3bir-BqCTWliHYCSCSbX5yLLWuL0c9Q3Ub3_BL7YoM6NOt6Tl8RL8HYzAJu=w122-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 21,
+    "combined_order": 21
+  },
+  {
+    "rank": 22,
+    "name": "Birria Landia",
+    "rating": 4.5,
+    "review_count": 207,
+    "price_range": "$10–20",
+    "cuisine": "Mexican",
+    "description": "Bronx location of the popular food truck that put Tijuana-style birria on the map in New York City.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrEcuh60kx5FJLFolXihuaIoFgle2RWbuS8Wzhz1JToC8JtOkKsNADtiQgOrJ2epwslPJgxl7iME8EN9VvjCOxEnlzuRFkjnZfMA0zW0Q-BamJfp43JYVI2mj36Uuv3nukJ5KNUwQ=w80-h106-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 22,
+    "combined_order": 22
+  },
+  {
+    "rank": 23,
+    "name": "Borgo",
+    "rating": 4.4,
+    "review_count": 153,
+    "price_range": "$100+",
+    "cuisine": "Italian",
+    "description": "The first Manhattan restaurant from the Brooklyn restaurateur Andrew Tarlow, featuring a trattoria-style menu that changes seasonally.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipNZ0k3zhdjXUSvqTrxKoq_AOqMLJmaIcdTq2Mqv=w80-h111-k-no",
+    "sources": [
+      "NYT",
+      "NYM"
+    ],
+    "nyt_rank": 23,
+    "nym_rank": 11,
+    "formatted_address": "124 E. 27th St.",
+    "website": "https://borgonyc.com",
+    "combined_order": 23
+  },
+  {
+    "rank": 24,
+    "name": "Bridges",
+    "rating": 4.6,
+    "review_count": 132,
+    "price_range": "$100+",
+    "cuisine": "French",
+    "description": "Stylish Chinatown hot spot from an Estela alum offering an imaginative, globally inspired menu amid chic, minimalist decor.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipNsdKYnlimlM6uREXmv0H_hSfGKP6rjumkCSbZ_=w137-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 24,
+    "combined_order": 24
+  },
+  {
+    "rank": 25,
+    "name": "Bungalow",
+    "rating": 4.3,
+    "review_count": 1473,
+    "price_range": "$50–100",
+    "cuisine": "Indian",
+    "description": "East Village restaurant from the celebrity chef Vikas Khanna showcasing regional Indian cuisine.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipMYZkT2lNCdvCpSEqzvj2PgKjUl2DoXs7ZpsbHi=w137-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 25,
+    "combined_order": 25
+  },
+  {
+    "rank": 26,
+    "name": "Cafe Kestrel",
+    "rating": 4.4,
+    "review_count": 60,
+    "price_range": "$50–100",
+    "cuisine": "Restaurant",
+    "description": "Unfussy and cozy jewel box of a restaurant in Red Hook with a focus on European and New American cuisine.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4noAeHMiKj3Al1aJoobVTGKAUQdMeUifVJxU1LvSNfQy0VNn1jGargDLP-U7Sea4_93uRSvyn0c1ixthlKXWbu7nS3z5PYseDHl1MsvNren8_9foAFfx9FQLEcwPPYgkSWzsGZpoi75MW7p8=w80-h106-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 26,
+    "combined_order": 26
+  },
+  {
+    "rank": 27,
+    "name": "Cafe Mado",
+    "rating": 4.7,
+    "review_count": 189,
+    "price_range": "$50–100",
+    "cuisine": "Cafe",
+    "description": "Laid-back all-day cafe serving breakfast and lunch, as well as a refined and ambitious dinner menu in the former Oxalis space.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4noC0wHF1sAEmDtUjo0NQmT7WEpAO48TJQkQq34Bibl57_jx9b480pVyvI5bQpjB46Qhyif2QtQWlVX2O0r2ELM3ndlLQWsWFeykG6r64qe6cAItTgfzwe_NEtfEU8jX9yow6PIqT6xacx8=w80-h106-k-no",
+    "sources": [
+      "NYT",
+      "NYM"
+    ],
+    "nyt_rank": 27,
+    "nym_rank": 14,
+    "formatted_address": "791 Washington Ave., Prospect Heights",
+    "website": "https://cafemadonyc.com",
+    "combined_order": 27
+  },
+  {
+    "rank": 28,
+    "name": "Carnitas Ramirez",
+    "rating": 4.8,
+    "review_count": 357,
+    "price_range": "$10–20",
+    "cuisine": "Mexican",
+    "description": "Pork-focused taqueria,\n              inspired by Mexico City, from the couple behind Taqueria Ramírez in Greenpoint.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipP_9azuCgXP9mQcT1CXkYGhIujU8jrFjb63LG7O=w80-h106-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 28,
+    "combined_order": 28
+  },
+  {
+    "rank": 29,
+    "name": "Casa Mono",
+    "rating": 4.3,
+    "review_count": 1783,
+    "price_range": "$50–100",
+    "cuisine": "Spanish",
+    "description": "Andy Nusser's longstanding restaurant dedicated to bold Spanish flavors and nose-to-tail cooking. Home to an expansive wine list featuring aged Cava, musky vintage Rioja and more.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipMBSFWnMbcxcRN_Owu3M2TEoMhtclRpXaxvypNH=w138-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 29,
+    "combined_order": 29
+  },
+  {
+    "rank": 30,
+    "name": "Cervo's",
+    "rating": 4.5,
+    "review_count": 548,
+    "price_range": "$50–100",
+    "cuisine": "Seafood",
+    "description": "Dimes Square restaurant featuring a menu of bright, olive-oil-soaked seafood inspired by the Iberian Peninsula, with olives and anchovies aplenty.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrtxpUq3Q2VV4wBrQQGMdaRxxTKcv-NINLZYQdb5pTrVvW0jACxMqVgCfwGKSzSqJRQln7ko1Rt8auOl29nSTfVianDt6YjzGS_HYyzBvC1n6rgja8X274LvkoyAcD4QI-SCOo=w110-h92-k-no",
+    "sources": [
+      "NYT",
+      "NYM"
+    ],
+    "nyt_rank": 30,
+    "nym_rank": 15,
+    "formatted_address": "43 Canal St.",
+    "website": "https://cervosnyc.com",
+    "combined_order": 30
+  },
+  {
+    "rank": 31,
+    "name": "Chambers",
+    "rating": 4.7,
+    "review_count": 303,
+    "price_range": "$100+",
+    "cuisine": "New American",
+    "description": "Low-key restaurant and bar with an 89-page wine list, curated by the celebrated sommelier Pascaline Lepeltier, and Greenmarket-driven plates from a Gramercy Tavern vet.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipPcMBFlh1SDaWWFr5ZHfe62qJf9PhMCYPwjY2Fb=w137-h92-k-no",
+    "sources": [
+      "NYT",
+      "NYM"
+    ],
+    "nyt_rank": 31,
+    "nym_rank": 30,
+    "formatted_address": "94 Chambers St.",
+    "website": "https://chambers.nyc",
+    "combined_order": 31
+  },
+  {
+    "rank": 32,
+    "name": "Chez Ma Tante",
+    "rating": 4.4,
+    "review_count": 918,
+    "price_range": "$30–50",
+    "cuisine": "Bistro",
+    "description": "Greenpoint restaurant famous for its butter-soaked pancakes and gutsy, Euro-Canadian sensibility, a nod to Montreal.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipPZftAc6l62qTnCKeDXzZmhJziOkOUotBpk-U6e=w138-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 32,
+    "combined_order": 32
+  },
+  {
+    "rank": 33,
+    "name": "Cho Dang Gol",
+    "rating": 4.6,
+    "review_count": 2850,
+    "price_range": "$30–50",
+    "cuisine": "Korean",
+    "description": "Koreatown institution with a focus on homemade tofu served in varying states of wobbly, as well as Korean classics like pajeon and bibimbap.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipOK5y0UpQGxu0C-HZiHkS34rqgwJovaZANXE1pP=w122-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 33,
+    "combined_order": 33
+  },
+  {
+    "rank": 34,
+    "name": "Chongqing Lao Zao 重慶老灶",
+    "rating": 4.6,
+    "review_count": 1583,
+    "price_range": "$50–100",
+    "cuisine": "Hot Pot",
+    "description": "Flushing hot pot fixture with a dizzying assortment of accouterments and a simple but delicious dessert menu.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrL6VQpb6dquhFIz2AUKwcM0ZPxwq34jfhT9vtKOAmHQR7ldeeL-07_LMJWjGr022GRrHKHnlP4WfxLQWtFhJIMPNVoiJZMUIBQ8gHy5H-5HvCo04TxAKPASjhoLPFnqgNrtGjY=w80-h99-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 34,
+    "combined_order": 34
+  },
+  {
+    "rank": 35,
+    "name": "Çka Ka Qëllu",
+    "rating": 4.8,
+    "review_count": 1338,
+    "price_range": "$30–50",
+    "cuisine": "Mediterranean",
+    "description": "A rustic tavern decorated with Albanian artifacts, and a focus on the culinary riches of Albania and Kosovo, serving a vast spread of meats and dips.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipM9JpmCtTZu8b8YdFckbe8vG_svtiAHUee56Vzu=w138-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 35,
+    "combined_order": 35
+  },
+  {
+    "rank": 36,
+    "name": "Çka Ka Qëllue",
+    "rating": 4.8,
+    "review_count": 1551,
+    "price_range": "$30–50",
+    "cuisine": "Mediterranean",
+    "description": "Manhattan location of the Bronx-born restaurant with a focus on the culinary riches of Albania and Kosovo, serving a vast spread of meats and dips.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipMmShfCFD4i7U0dTZjg9O8FBIql6cmqtxxEVrV2=w122-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 36,
+    "combined_order": 36
+  },
+  {
+    "rank": 37,
+    "name": "Claud",
+    "rating": 4.3,
+    "review_count": 342,
+    "price_range": "$100+",
+    "cuisine": "Restaurant",
+    "description": "Sophisticated wine bar with an intelligently quirky, classically schooled kitchen from a Momofuku vet.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipNjswW5HqrFs227wT-SNUrEI_LYxCLnt1X5uBmy=w138-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 37,
+    "combined_order": 37
+  },
+  {
+    "rank": 38,
+    "name": "Cocina Consuelo",
+    "rating": 4.7,
+    "review_count": 251,
+    "description": "Harlem restaurant with a homey atmosphere and menu of dishes inspired by a childhood spent in Puebla and Oaxaca.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nreZvg9nYFzFdVJog2sFi8wBWoKxxuhD0OybYqO5UdMs-7LS_QA1i6SM9bZfOf_Os_eMcZoScH0AY9vssY1abR9xXjXXkVQA55rBVvk9ThTxIQJkf2fhWu21O_If37sjQY5pU85nQ=w163-h92-k-no",
+    "sources": [
+      "NYT",
+      "NYM"
+    ],
+    "nyt_rank": 38,
+    "nym_rank": 20,
+    "formatted_address": "130 Hamilton Pl.",
+    "website": "https://cocinaconsuelonyc.com",
+    "combined_order": 38
+  },
+  {
+    "rank": 39,
+    "name": "Court Street Grocers",
+    "rating": 4.5,
+    "review_count": 618,
+    "price_range": "$10–20",
+    "cuisine": "Sandwich",
+    "description": "Original location of a mini-chain specializing in an eclectic menu of fat, inhalable sandwiches.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipMftbj1PgJ_m-7kPKa4FkXeb_vOKxUXqgCdG2gB=w421-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 39,
+    "combined_order": 39
+  },
+  {
+    "rank": 40,
+    "name": "Court Street Grocers Williamsburg",
+    "rating": 4.4,
+    "review_count": 123,
+    "price_range": "$10–20",
+    "cuisine": "Sandwich",
+    "description": "Local mini-chain specializing in an eclectic menu of fat, inhalable sandwiches.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrXEGDf7ncuDuLGxFMgZhpwUAKh5rzz11FOdFcGLnqkFEHkeK__r6tGHQhqcOriIgPHtv4-N9CIeJRo8W2nij7xnxw23fCn06UDtyq5t5kisurb-gm6O3Mki01_5PwzBlhStov46g=w115-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 40,
+    "combined_order": 40
+  },
+  {
+    "rank": 41,
+    "name": "Court Street Grocers",
+    "rating": 4.3,
+    "review_count": 267,
+    "price_range": "$10–20",
+    "cuisine": "Sandwich",
+    "description": "Local mini-chain specializing in an eclectic menu of fat, inhalable sandwiches.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipOzVRBJ7LwNzFiL3ScN1hjUqQlVI0HxBGlI_ydm=w138-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 41,
+    "combined_order": 41
+  },
+  {
+    "rank": 42,
+    "name": "Crown Shy",
+    "rating": 4.5,
+    "review_count": 1644,
+    "price_range": "$100+",
+    "cuisine": "American",
+    "description": "Seasonal restaurant from the chef James Kent located on the ground floor of an Art Deco landmark building in the financial district.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipNoexlmzP-9v86jbmde4jptpCmscUN608kboBCj=w123-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 42,
+    "combined_order": 42
+  },
+  {
+    "rank": 43,
+    "name": "Daniel",
+    "rating": 4.6,
+    "review_count": 2379,
+    "price_range": "$100+",
+    "cuisine": "French",
+    "description": "Three-decade-old classic French restaurant from the famed chef and restaurateur Daniel Boulud.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipPe5mds-MbEsjLf_Q2AFiXSYT0_jgkh0sUBCN7A=w138-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 43,
+    "combined_order": 43
+  },
+  {
+    "rank": 44,
+    "name": "Dera Restaurant",
+    "rating": 3.7,
+    "review_count": 3514,
+    "price_range": "$$",
+    "cuisine": "Pakistani",
+    "description": "Traditional Pakistani food (all halal) served in a large cafeteria-like setting in the Jackson Heights neighborhood.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4np5-SZgEKOgR3wqdO0yi5xCvNfBVM7AC4cShsEz5ewg_zZZyTeMd-EjdB4ERRzyEwHtKw5zk5KkRyqXnRCfehtQGHvV5Mkd60FhqBhtyq1EhaICFwKXC7Zj-koXFtBEkO37wY82=w122-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 44,
+    "combined_order": 44
+  },
+  {
+    "rank": 45,
+    "name": "Dhamaka",
+    "rating": 4.5,
+    "review_count": 3423,
+    "price_range": "$50–100",
+    "cuisine": "Indian",
+    "description": "Lower East Side restaurant from the team behind Semma, specializing in lesser-known regional cuisines of India.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrv1rBL29m6jEkkzj5ua86tMxP4GgWuRpGhsJjj4EenYN-lgrIZrVOHTcwuIzGtBrzo0M2wttwczmZ5hZ6KpXlX9KGLn7Zdq1BkRFqGiRKwYX6_j2SfGbeKmRIRg2NiWXzhLhOjF7iyJJi4=w80-h106-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 45,
+    "combined_order": 45
+  },
+  {
+    "rank": 46,
+    "name": "Don Peppe",
+    "rating": 4.5,
+    "review_count": 1475,
+    "price_range": "$50–100",
+    "cuisine": "Italian",
+    "description": "Decades-old red-sauce Italian restaurant teeming with racetrack memorabilia.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npS572smxR4je_5VgH0kgMw2Dth6l6pqxajhDtCVVOcFKeiZKb0Y1s_lOg7ubmN6arZIg6_wsdho8_kGsAazornGThVfWkzobHwxL91hvEg3RyYRVY7ZPspJvgzR1ns8UZ67hc=w186-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 46,
+    "combined_order": 46
+  },
+  {
+    "rank": 47,
+    "name": "Ewe's Delicious Treats",
+    "rating": 3.8,
+    "review_count": 52,
+    "price_range": "$20–30",
+    "cuisine": "African",
+    "description": "Tiny Brooklyn restaurant serving deeply flavored and complex Nigerian and West African dishes.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipMOJ2sVaWAbLtTjXRJzpvDBVxfBLT-m2VDfJGkb=w122-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 47,
+    "combined_order": 47
+  },
+  {
+    "rank": 48,
+    "name": "Eyval",
+    "rating": 4.6,
+    "review_count": 842,
+    "price_range": "$50–100",
+    "cuisine": "Persian",
+    "description": "Hip Bushwick restaurant from a former Sofreh chef serving dishes inspired by Iranian street food.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipOn4haC1kcn__rkJY2IyEKzly0HP9ojXvpSrpKn=w138-h92-k-no",
+    "sources": [
+      "NYT",
+      "NYM"
+    ],
+    "nyt_rank": 48,
+    "nym_rank": 22,
+    "formatted_address": "25 Bogart St., Bushwick",
+    "website": "https://eyvalnyc.com",
+    "combined_order": 48
+  },
+  {
+    "rank": 49,
+    "name": "The Four Horsemen",
+    "rating": 4.6,
+    "review_count": 1022,
+    "price_range": "$100+",
+    "cuisine": "Restaurant",
+    "description": "Williamsburg hot spot with a seasonally minded menu and expansive natural wine list.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipNNH9NF2rxQQhkStu4PcF1C2nnJYR893w9G-9C3=w80-h119-k-no",
+    "sources": [
+      "NYT",
+      "NYM"
+    ],
+    "nyt_rank": 49,
+    "nym_rank": 12,
+    "formatted_address": "295 Grand St., Williamsburg",
+    "website": "https://fourhorsemenbk.com",
+    "combined_order": 49
+  },
+  {
+    "rank": 50,
+    "name": "Four Twenty Five, a Jean-Georges Restaurant",
+    "rating": 4.5,
+    "review_count": 229,
+    "price_range": "$100+",
+    "cuisine": "New American",
+    "description": "Upscale fine dining restaurant helmed by the chefs Jean-Georges Vongerichten and Jonathan Benno.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipNQnl0EvufKIV6gnzw_CWeWkrpksH2-CdBngywi=w137-h92-k-no",
+    "sources": [
+      "NYT",
+      "NYM"
+    ],
+    "nyt_rank": 50,
+    "nym_rank": 26,
+    "formatted_address": "425 Park Ave.",
+    "combined_order": 50
+  },
+  {
+    "rank": 51,
+    "name": "Frenchette",
+    "rating": 4.3,
+    "review_count": 1218,
+    "price_range": "$100+",
+    "cuisine": "French",
+    "description": "Modern brasserie from the team behind Le Rock and Le Veau d'Or.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npO2fUWkoVN2NE6dv6orO2pp77CPKKoBVbM8VowvHYdOA5dZch1Q1FKYP1SJPcrOYWHtfYLAC1hNP1AE1MJ5I27tuPRa6yMtt7MO37qC1ZvN6SKv4jCf6lqNkkaNA2Ro5eyPzaC=w122-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 51,
+    "combined_order": 51
+  },
+  {
+    "rank": 52,
+    "name": "Gage & Tollner",
+    "rating": 4.3,
+    "review_count": 1219,
+    "price_range": "$100+",
+    "cuisine": "American",
+    "description": "Revival of a 19th-century restaurant, serving steakhouse fare, raw seafood and elaborate desserts.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipN_zfuvqCqj1RrlRv9Y90KCGG6RfVPo3IRfDebM=w138-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 52,
+    "combined_order": 52
+  },
+  {
+    "rank": 53,
+    "name": "Golden Diner",
+    "rating": 4.4,
+    "review_count": 2394,
+    "price_range": "$20–30",
+    "cuisine": "Diner",
+    "description": "Downtown hot spot with cheffed-up takes on diner classics like pancakes and patty melts.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipO6UemICmJARWPGgHls7dHx8c2F1VdU1bF2Camz=w80-h106-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 53,
+    "combined_order": 53
+  },
+  {
+    "rank": 54,
+    "name": "Gramercy Tavern",
+    "rating": 4.6,
+    "review_count": 4638,
+    "price_range": "$100+",
+    "cuisine": "New American",
+    "description": "Service-minded Flatiron institution with a seasonally minded menu.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipM9KRVcGfGWnAE-7ydoei-1Yj1wjZb9PcWAU9w9=w138-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 54,
+    "combined_order": 54
+  },
+  {
+    "rank": 55,
+    "name": "Great NY Noodletown",
+    "rating": 4.1,
+    "review_count": 2942,
+    "price_range": "$10–20",
+    "cuisine": "Chinese",
+    "description": "Chinatown favorite with an encyclopedic menu and a diverse, all-ages crowd.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipMexQF5dWD5iiwXljkxs_VMuu-VqnXwDU_7BExB=w122-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 55,
+    "combined_order": 55
+  },
+  {
+    "rank": 56,
+    "name": "THE GRILL",
+    "rating": 4.5,
+    "review_count": 785,
+    "price_range": "$100+",
+    "cuisine": "Fine Dining",
+    "description": "Luxe steakhouse and restaurant from the Carbone team in the former home of the Four Seasons.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipNGnlu1u_-DJY2JIhZMeWxEkkXO08Pull4-BMx3=w138-h92-k-no",
+    "sources": [
+      "NYT",
+      "NYM"
+    ],
+    "nyt_rank": 56,
+    "nym_rank": 28,
+    "formatted_address": "99 E. 52nd St.",
+    "website": "https://thegrillnewyork.com",
+    "combined_order": 56
+  },
+  {
+    "rank": 57,
+    "name": "Hainan Chicken House | 海南鸡记",
+    "rating": 4.1,
+    "review_count": 263,
+    "price_range": "$20–30",
+    "cuisine": "Malaysian",
+    "description": "Sunset Park restaurant specializing in Malaysian Hainanese chicken rice perfumed with jasmine, pandan, lemongrass and shallots.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipPnTG2xEGzk7yPwjfwMBp140R2w7X2gloYjzJU=w122-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 57,
+    "combined_order": 57
+  },
+  {
+    "rank": 58,
+    "name": "Hamburger America",
+    "rating": 4.5,
+    "review_count": 2443,
+    "price_range": "$10–20",
+    "cuisine": "Hamburger",
+    "description": "Counter specializing in Oklahoma onion burgers from the burger-obsessed chef George Motz.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipOMfmYqRY-cJmL6TBYIb22FJhm5IHoq9L1CEz6J=w122-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 58,
+    "combined_order": 58
+  },
+  {
+    "rank": 59,
+    "name": "Hellbender",
+    "rating": 4.2,
+    "review_count": 343,
+    "price_range": "$30–50",
+    "cuisine": "Mexican",
+    "description": "Casual bar and restaurant serving soulful, ingredient-driven Mexican American cooking in an increasingly hip corner of Queens.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npRafMHJihM5YThNxmblQK-qGC-HRw6SY63Oex43tyuVLJt0Q-g2leTsR-AuntKFx71x2XZPm7_JAnjj9nQRvwbg14FJDpspGIbhdltIsw1ldsqFLanjfcIM89jnDtICjTHFu06AgijQIUq=w80-h106-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 59,
+    "combined_order": 59
+  },
+  {
+    "rank": 60,
+    "name": "Hindu Temple Canteen",
+    "rating": 4.6,
+    "review_count": 1949,
+    "price_range": "$10–20",
+    "cuisine": "South Indian",
+    "description": "Basement cafeteria beneath a Queens Hindu temple serving dosa, idli, vada and other South Indian dishes.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npMYd_o31LxdyPqAdRVlm8Lto2_o1WKjWULRacAmK5KIeQp-wDXAIZ1iRM5zuqnaKKBT9PkmeyqP21Aci_lSMJXCsmqU74rSx84CBAcgiCjdhixwbelq9qFkMmtmOgF95zT0gwLC3FwNfC8=w80-h106-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 60,
+    "combined_order": 60
+  },
+  {
+    "rank": 61,
+    "name": "Ho Foods",
+    "rating": 4.3,
+    "review_count": 709,
+    "price_range": "$20–30",
+    "cuisine": "Taiwanese",
+    "description": "Taiwanese standby for crisp-edged radish cakes, fan tuan, invigorating housemade soy milk and soul-warming beef noodle soup",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipNnIL9xqvXgOI7inkKQXMHn9lvK-zhqx_P5I5I1=w80-h120-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 61,
+    "combined_order": 61
+  },
+  {
+    "rank": 62,
+    "name": "Houseman",
+    "rating": 4.4,
+    "review_count": 328,
+    "price_range": "$$",
+    "cuisine": "American",
+    "description": "Homey,\n              expectation-busting neighborhood restaurant serving a New American menu.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipMMqMC-wXyhvfzTRbPkQD_0HGnOQ37uNb1lem2Z=w138-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 62,
+    "combined_order": 62
+  },
+  {
+    "rank": 63,
+    "name": "Jean-Georges",
+    "rating": 4.5,
+    "review_count": 1348,
+    "price_range": "$100+",
+    "cuisine": "Haute French",
+    "description": "Elegant tasting menu French restaurant overlooking Central Park since 1997.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipPZt1Xi284KH72bEJDysUpWQj7HIo_4RsaKK2kd=w138-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 63,
+    "combined_order": 63
+  },
+  {
+    "rank": 64,
+    "name": "Jeju Noodle Bar",
+    "rating": 4.6,
+    "review_count": 2728,
+    "price_range": "$50–100",
+    "cuisine": "Korean",
+    "description": "West Village destination for impeccably fresh seafood and pristine bowls of Korean ramyun.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipP_Iuni8cuPEKvlBp5ttZdL7e-B6Gz5cvDeVVnL=w137-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 64,
+    "combined_order": 64
+  },
+  {
+    "rank": 65,
+    "name": "Jungsik",
+    "rating": 4.6,
+    "review_count": 909,
+    "price_range": "$100+",
+    "cuisine": "Korean",
+    "description": "Fine-dining, tasting-menu restaurant serving a refined selection of inventive Korean dishes.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqHE4ahWGMeJhRTJh_WywNHG5mJg4VPO4ZUiFqEjdWW5xLpCDUp-eTeH6THfU8D0if5Hn_ZfbODiXnvkYPGaDVg21kIQlqztXSJqebDvC14hJDR8GPaDXTQjFl79_AzArDcQzPDay8W4Q5Q=w122-h92-k-no",
+    "sources": [
+      "NYT",
+      "NYM"
+    ],
+    "nyt_rank": 65,
+    "nym_rank": 18,
+    "formatted_address": "2 Harrison St.",
+    "website": "https://jungsik.com",
+    "combined_order": 65
+  },
+  {
+    "rank": 66,
+    "name": "Keens Steakhouse",
+    "rating": 4.6,
+    "review_count": 9253,
+    "price_range": "$100+",
+    "cuisine": "Steak",
+    "description": "More than century-old,\n              wood-paneled steakhouse known for mutton chops and classic fare.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipP1hknr6IZESWGL1cNOOaBXckQEN4jmSHlgjSB9=w137-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 66,
+    "combined_order": 66
+  },
+  {
+    "rank": 67,
+    "name": "Kisa",
+    "rating": 4.5,
+    "review_count": 559,
+    "price_range": "$30–50",
+    "cuisine": "Korean",
+    "description": "Hip Korean restaurant serving baek ban platters in the style of the taxi stand restaurants of South Korea.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npqDqs9LxxltWxt0TprCHiZFnwA0TUXhck5OU8lDYvmI-mua8qLi5PaHqHIsOpo0WgXIClSmP9QmaKORobBAJBmJIABwyMYprLu5dJt5VMBpo1WeGKkX4kkUs7m_W8QUV-mJdkv9bwDdPY=w122-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 67,
+    "combined_order": 67
+  },
+  {
+    "rank": 68,
+    "name": "Koloman",
+    "rating": 4.4,
+    "review_count": 455,
+    "description": "French and Austrian fine dining restaurant on the ground floor of the Ace Hotel.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipP21Q8dR3-FvsMIrZn0iLEuFlurnRXmiuYfoO9h=w137-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 68,
+    "combined_order": 68
+  },
+  {
+    "rank": 69,
+    "name": "Kono",
+    "rating": 4.6,
+    "review_count": 190,
+    "price_range": "$100+",
+    "cuisine": "Yakitori",
+    "description": "Refined dining counter serving yakitori skewers in the style of omakase.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipMaV2gDaqsjln9700emX0oMA8npLwCblLSqbG4u=w138-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 69,
+    "combined_order": 69
+  },
+  {
+    "rank": 70,
+    "name": "Kopitiam",
+    "rating": 4.2,
+    "review_count": 1499,
+    "price_range": "$10–20",
+    "cuisine": "Malaysian",
+    "description": "All-day cafe serving Nyonya cuisine, a blend of Chinese and Malaysian food traditions.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipMnlaCTOVDJWj1o1sQSDNHHvFtV5tagokPYjyZp=w138-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 70,
+    "combined_order": 70
+  },
+  {
+    "rank": 71,
+    "name": "Laghman Express",
+    "rating": 4.9,
+    "review_count": 2496,
+    "price_range": "$10–20",
+    "cuisine": "Halal",
+    "description": "Modest Bensonhurst storefront offering dishes from Uzbek, Kazakh, Tajik and Uyghur cuisines, including hand-pulled noodles with cumin lamb.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipMZTDbojni9gQoao_8F_6b5cw9FmwzpR7YfQhVL=w80-h106-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 71,
+    "combined_order": 71
+  },
+  {
+    "rank": 72,
+    "name": "Lakruwana Restaurant",
+    "rating": 4.5,
+    "review_count": 1034,
+    "price_range": "$20–30",
+    "cuisine": "Sri Lankan",
+    "description": "Sri Lankan restaurant adorned with dozens of artifacts collected over the years by the Wijesinghe family and known for its popular weekend buffet.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4noC4maC4YFCmQGNaTFCY3o7sHq4SisXbALjiCscv0yDXvmXJuK34q1TLOVHBRMfAAlxmNri46uc4QUcj4XEGdrg8p_25HSQK205HAN7VOrqn0pd0gvjmd1PW_3rfl0mrWcNAp8q1YTv-oY=w80-h106-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 72,
+    "combined_order": 72
+  },
+  {
+    "rank": 73,
+    "name": "Le Coucou",
+    "rating": 4.5,
+    "review_count": 1965,
+    "price_range": "$100+",
+    "cuisine": "Restaurant",
+    "description": "Pricey French restaurant helmed by an American chef who used to cook in Paris and seamlessly blends Gallic traditions with downtown swagger.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipMTpnN1KO9P-qw2kFUBx2iIaBxSZ0IcfYtM-ZAO=w137-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 73,
+    "combined_order": 73
+  },
+  {
+    "rank": 74,
+    "name": "Le Veau d'Or",
+    "rating": 4.5,
+    "review_count": 222,
+    "price_range": "$100+",
+    "cuisine": "French",
+    "description": "The second coming of a beloved French bistro from the team behind Frenchette and Le Rock.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nq-Z4M9AafVKOErEMdjGpCAeUX5DBcUuOyRGuN0LEjH9IkJEzuyzwqV431ED3_Sl4QrCtXDG-eYOMWIvVU0C0ln8f-53Jz2t5mAtNyAyzFqrn8pS3agWEtGbHR0qD_7y2QBz47BMWWLmoyY=w122-h92-k-no",
+    "sources": [
+      "NYT",
+      "NYM"
+    ],
+    "nyt_rank": 74,
+    "nym_rank": 1,
+    "formatted_address": "129 E. 60th St.",
+    "website": "https://lvdnyc.com",
+    "combined_order": 74
+  },
+  {
+    "rank": 75,
+    "name": "Levant",
+    "rating": 4.5,
+    "review_count": 344,
+    "price_range": "$10–20",
+    "cuisine": "Middle Eastern",
+    "description": "Steinway Street gem specializing in feteer — flaky, layered bread — among other Egyptian delights.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipOi5wVMiij2yhar3xuP8Lwvde1IaEIae2caCfDa=w113-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 75,
+    "combined_order": 75
+  },
+  {
+    "rank": 76,
+    "name": "Lilia",
+    "rating": 4.3,
+    "review_count": 2165,
+    "price_range": "$50–100",
+    "cuisine": "Italian",
+    "description": "Missy Robbins's temple to handmade pasta and other Italian specialities.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nr9JNWjTg3Rg-_em9Xo2RpTTsmUqPLm3VYVsYxbL0K3DfKIlxRh8uv7ipkASxxckTLcS5W88DVcx49x48rQ-RtaKnR6n6sOOLCQt7X2GLvqzmXzuFnMylETsxSPJfcvsfaFSbqtXg=w122-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 76,
+    "combined_order": 76
+  },
+  {
+    "rank": 77,
+    "name": "Little Myanmar",
+    "rating": 4.1,
+    "review_count": 289,
+    "price_range": "$20–30",
+    "cuisine": "Burmese",
+    "description": "Family-run restaurant showcasing the breadth of Burmese cuisines, including oxtails, samosas and noodle dishes.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipP2moPs5XcLyAG6PN63AQXLbGhxcTHOYljCCHw4=w80-h100-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 77,
+    "combined_order": 77
+  },
+  {
+    "rank": 78,
+    "name": "Lola's",
+    "rating": 4.8,
+    "review_count": 211,
+    "price_range": "$50–100",
+    "cuisine": "New American",
+    "description": "NoMad restaurant serving a low-key but inspired menu of seasonal dishes served in an unfussy, convivial dining room.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npNhKNlyzbfWS_NQ_9b9S68HZi_oBdm4Ev1O4HjCYe3PA3eyHgORRULqUR98x1h5NM_vXFxufnBgTyim8zWaR9QRpVlYjSbWmwZ8ho-I56qFA2CI1CHk0gk7mvaOolg7wfTxnM_lBevx64=w80-h106-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 78,
+    "combined_order": 78
+  },
+  {
+    "rank": 79,
+    "name": "Lucia Pizza Of Avenue X",
+    "rating": 4.5,
+    "review_count": 840,
+    "price_range": "$10–20",
+    "cuisine": "Pizza",
+    "description": "Contemporary pizza restaurant with a reverence for the old from a second-generation pizzaiolo.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipOP0g-YHQJQ-asTBxPIvJ2SU7S_bBQWYxGNVDCV=w80-h100-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 79,
+    "combined_order": 79
+  },
+  {
+    "rank": 80,
+    "name": "Mắm",
+    "rating": 4.2,
+    "review_count": 468,
+    "price_range": "$30–50",
+    "cuisine": "Vietnamese",
+    "description": "Tiny restaurant serving baskets of grilled intestines, sticky-rice sausage and more, alongside potent condiments, to customers seated at colorful plastic stools on Forsyth Street.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npQ2ajZ6zDbp5wY1tmjyy5rTluAXj-8YhijzPRe79d3AE7INUk_SyTAJERAFQr6gA2_SZ7ua4KoG0MOV3dZ-h0jNi_zcVAFZdxKP2QogIpsTU7dyybF0RlPHqihvGRkV_y36Dq4=w80-h106-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 80,
+    "combined_order": 80
+  },
+  {
+    "rank": 81,
+    "name": "Mountain House - Times Square 川山甲",
+    "rating": 4.9,
+    "review_count": 554,
+    "price_range": "$30–50",
+    "cuisine": "Chinese",
+    "description": "Midtown location of a popular and influential Chinese restaurant specializing in dishes from the Sichuan region. Ranked No. 9 on The Times’s 2025 list of best New York City restaurants.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipO5BX-kBGSng-MWsrNZfIZMNh_7BgcUawWFcRgI=w80-h120-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 81,
+    "combined_order": 81
+  },
+  {
+    "rank": 82,
+    "name": "Mountain House",
+    "rating": 4.6,
+    "review_count": 1867,
+    "price_range": "$30–50",
+    "cuisine": "Sichuan",
+    "description": "East Village location of a popular and influential Chinese restaurant specializing in dishes from the Sichuan region. Ranked No. 9 on The Times’s 2025 list of best New York City restaurants.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npjwKW2AxU0dPuGh3o0bBGdvMBmE-g5rlCK7x_w3mwPSdoaBhKYT-uAtbFfDCtQ9SfBl0-04uMZgUNiWVK2we8uXOpr0JMIpi_2b40qzO1CbpYfDj8H2pQRCfTWjVNLNynMviL4WAdZupXL=w138-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 82,
+    "combined_order": 82
+  },
+  {
+    "rank": 83,
+    "name": "OKDONGSIK New York",
+    "rating": 4.3,
+    "review_count": 579,
+    "price_range": "$30–50",
+    "cuisine": "Korean",
+    "description": "13-seat counter serving dweji gomtang, a pork-based variation on Korean gomtang, and mandu.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4noP7TEM6uiBeTwSS-ZDQ3sZr4RqY--q623-JoZh131bZtKLA8vdyW2TVuGjOa4bifDeQwkn7El8STQ89TgTmdcceWh0mZTFIOF7hqAr-TISD8Vw2gV2BsIjFY79WLStKcqri0Td=w80-h106-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 83,
+    "combined_order": 83
+  },
+  {
+    "rank": 84,
+    "name": "Okiboru House of Tsukemen",
+    "rating": 4.6,
+    "review_count": 729,
+    "price_range": "$20–30",
+    "cuisine": "Ramen",
+    "description": "Lower East Side destination for tsukemen and tontori ramen, with a vegetarian option.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqydXfMJzoj34iW_vE3dyX7DLHfm_A2HHgCQl_aUu6JGNyjJmYoeffo9Swe2VGWXXslfgLCl51ZR4jHMj6jFErK6E_eFiYfekw-Kkk-Y5C_YOLv65pabYltN89r-tr1uW25KlkQ=w92-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 84,
+    "combined_order": 84
+  },
+  {
+    "rank": 85,
+    "name": "OldSportFood",
+    "rating": 4.8,
+    "review_count": 317,
+    "price_range": "$10–20",
+    "cuisine": "Restaurant",
+    "description": "Queens restaurant specializing in Lanzhou beef noodle soup from northwestern China with thin noodles, refreshing broth and chile crisp.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipNMCLP9VmXrEypYwlfTuGp55_Xl5FfZqDr5kmIX=w80-h106-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 85,
+    "combined_order": 85
+  },
+  {
+    "rank": 86,
+    "name": "Raf's",
+    "rating": 4.1,
+    "review_count": 199,
+    "description": "Stylish low-lit French Italian restaurant powered by a wood-fired oven in a former bakery space.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npaMD7OEZPWV5eaiIeouC3ugosAEPdJv4t0vmczxZLRqPLgVpHKCnMjp_KCnb2kDKdd_DKpU_VRmL-2vsd5A335lbA9oB2kxjxzIilzJK6ObGUqXNqN9EhL_CrLfU1g3sYOVcx-=w122-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 86,
+    "combined_order": 86
+  },
+  {
+    "rank": 87,
+    "name": "Raku",
+    "rating": 4.5,
+    "review_count": 1317,
+    "price_range": "$20–30",
+    "cuisine": "Japanese",
+    "description": "East Village location of a popular mini-chain of restaurants specializing in Japanese udon afloat in complex, deeply flavored dashi.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipNCyYYXn-_v7q5uly5BB50b30t2lmiz24fu34sR=w137-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 87,
+    "combined_order": 87
+  },
+  {
+    "rank": 88,
+    "name": "Raku",
+    "rating": 4.5,
+    "review_count": 1709,
+    "price_range": "$30–50",
+    "cuisine": "udon noodles",
+    "description": "Greenwich Village location of a popular mini-chain of restaurants specializing in Japanese udon afloat in complex, deeply flavored dashi.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqJBmkRB5y7n3PwxubRYmFczIzmsIgLVk3T1HkYu-BpB_P6Qlaozj2APLIU7k0bDQ3SLewCmRBoIUqZiliC0OZBRzm7Eb-z1PV410wOIhsui7iKibClxDDlAPyKa2hTY6R7U2Ik=w122-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 88,
+    "combined_order": 88
+  },
+  {
+    "rank": 89,
+    "name": "Raku",
+    "rating": 4.4,
+    "review_count": 199,
+    "price_range": "$30–50",
+    "cuisine": "Restaurant",
+    "description": "Midtown location of a popular mini-chain of restaurants specializing in Japanese udon afloat in complex, deeply flavored dashi.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipNh4LezvrXNzgRdDdSCfkzo8yvhU5yddy5D3imC=w92-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 89,
+    "combined_order": 89
+  },
+  {
+    "rank": 90,
+    "name": "Randazzo's Clam Bar",
+    "rating": 4.3,
+    "review_count": 2807,
+    "price_range": "$$",
+    "cuisine": "Seafood",
+    "description": "Decades-old Sheepshead Bay clam bar best known for its fried calamari and other Italian American seafood dishes.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipNwzWtJ07KBNh8EDI1b7mp7kGv8vD7bvTUbX96j=w153-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 90,
+    "combined_order": 90
+  },
+  {
+    "rank": 91,
+    "name": "S&P Lunch",
+    "rating": 4.6,
+    "review_count": 519,
+    "price_range": "$10–20",
+    "cuisine": "Restaurant",
+    "description": "Recently revived lunch counter from the team behind Court Street Grocers in the space once occupied by Eisenberg's Sandwich Shop.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npAF51EUerjhmh30n06tYJh0Achxofx6bMjVqunMQa6T3dwtCcWTKLiltU8SCX8MflTcLQHqjY31XVxLhn488WAt559GLxZU9kQE4pVHUeFoxhCn-XxkK3qulxilDnCVzvYZxA17j49ZiE=w122-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 91,
+    "combined_order": 91
+  },
+  {
+    "rank": 92,
+    "name": "Sailor",
+    "rating": 4.4,
+    "review_count": 332,
+    "price_range": "$100+",
+    "cuisine": "Restaurant",
+    "description": "Trendy seasonal restaurant on a popular dining strip in Fort Greene.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipNWoZkOMH5wtnZY4BixfH2DiDSwJQCnKdl5gRbI=w128-h92-k-no",
+    "sources": [
+      "NYT",
+      "NYM"
+    ],
+    "nyt_rank": 92,
+    "nym_rank": 29,
+    "formatted_address": "228 DeKalb Ave., Fort Greene",
+    "website": "https://sailor.nyc",
+    "combined_order": 92
+  },
+  {
+    "rank": 93,
+    "name": "Salty Lunch Lady's Little Luncheonette",
+    "rating": 4.6,
+    "review_count": 202,
+    "price_range": "$10–20",
+    "cuisine": "Restaurant",
+    "description": "Corner Ridgewood cafe known for lovingly made sandwiches and a rotating dessert menu.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrzd0Chm0lOQjTDhcu2XM7Fpgo1yj9FFWx9VnOYLWGRLHjtK8DW7HxU0uKYEWu4C7P_3nuJ4xo3bNpvsWauQzwJ5HT3tAzMIx3GlPILMBwVhkRc2-3fHsMH0K3HLJGu-wohYxq3PQClSfUg=w122-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 93,
+    "combined_order": 93
+  },
+  {
+    "rank": 94,
+    "name": "Shaw-nae’s House",
+    "rating": 4.8,
+    "review_count": 444,
+    "price_range": "$30–50",
+    "cuisine": "Soul",
+    "description": "Staten Island soul food and American restaurant in a homey space.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipM7AhA8KZTDBA_7J3Sx_Bn-WG3-Ca-XokB8RBU0=w122-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 94,
+    "combined_order": 94
+  },
+  {
+    "rank": 95,
+    "name": "Shukette",
+    "rating": 4.7,
+    "review_count": 2356,
+    "price_range": "$50–100",
+    "cuisine": "Middle Eastern",
+    "description": "Ayesha Nurdjaja's modern Middle Eastern restaurant with a wide-ranging, deftly executed menu.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqIgtoWZ-R5MG6r9_O91OR2OzgjafD_vv8U5y-OS89XXbQ8BQPcQrco7zO3leVFau8yINPgpE_hc-D5BKuFo-7NpRyuT1ZIkDig4dtoPo7kG_NKnFY7gByZjQl7Ju8V-89rsVHb=w122-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 95,
+    "combined_order": 95
+  },
+  {
+    "rank": 96,
+    "name": "Sofreh",
+    "rating": 4.4,
+    "review_count": 1024,
+    "price_range": "$50–100",
+    "cuisine": "Persian",
+    "description": "Prospect Heights restaurant located just off a busy Brooklyn thoroughfare specializing in Persian cuisine with a homemade feel.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipOy9EdLu32bRd9g468_PTMUlqsrH9YfKStHpo98=w122-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 96,
+    "combined_order": 96
+  },
+  {
+    "rank": 97,
+    "name": "Superiority Burger",
+    "rating": 4.3,
+    "review_count": 1784,
+    "price_range": "$20–30",
+    "cuisine": "Vegetarian",
+    "description": "Second iteration of Brooks Headley's popular vegetarian and vegan restaurant in the former home of a Ukrainian diner.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nr_Hed2dp93StbrzkS2V-65HiBA3hIMu3WPSN2HVRydMFnDj3_56MDl09NAI3wOUV22iy0c5Qt7N39tgxJCV2ZTEOPks2j7tk_aMpNmYX4LJ7aODBspV-2o2GF1khbUMjT_-zHzTQLgj4w=w122-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 97,
+    "combined_order": 97
+  },
+  {
+    "rank": 98,
+    "name": "Sushi Noz",
+    "rating": 4.5,
+    "review_count": 430,
+    "price_range": "$100+",
+    "cuisine": "Sushi",
+    "description": "Upper East Side omakase counter from the Japanese chef Nozomu Abe serving pristine, high-end sushi.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipN2AsXGRChqnh8hFUd6NYNBTMfe6BwP56KTRNcH=w138-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 98,
+    "combined_order": 98
+  },
+  {
+    "rank": 99,
+    "name": "Sushi Ouji",
+    "rating": 4.9,
+    "review_count": 177,
+    "price_range": "$100+",
+    "cuisine": "Japanese",
+    "description": "SoHo restaurant serving a carefully curated 14-course menu of otsumami, nigiri and futomaki, all for a quarter of the price of the more expensive places.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipOk3EtcPGuTM6uGW0_sel3Luiry9Kpy82DgGBNv=w137-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 99,
+    "combined_order": 99
+  },
+  {
+    "rank": 100,
+    "name": "Taiwanese Gourmet",
+    "rating": 4.2,
+    "review_count": 1052,
+    "price_range": "$20–30",
+    "cuisine": "Taiwanese",
+    "description": "Cash-only, no-nonsense oasis of Taiwanese cooking operating in Elmhurst since the 1990s.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4noWHcD0NDN2w-W8po7bnhd_A_YjCW7Iq2QzSrrTBOb-NjES6T1YTE-pS6Ad0FsSmtDg5jEtWTLuKFvden5gG_NZGgt0T6TGMDjNiTgB-RhYxct14yBoJpNjwEdzj66ulAflkxyoKfYnzQfm=w101-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 100,
+    "combined_order": 100
+  },
+  {
+    "rank": 101,
+    "name": "Thai Diner",
+    "rating": 4.4,
+    "review_count": 2528,
+    "price_range": "$30–50",
+    "cuisine": "Thai",
+    "description": "Popular downtown spot for Thai American food from the team behind the now-closed Uncle Boons.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrmxVOPWsLtM67ucHMNnLdFQO7qmUvtXYRyA41VehCgSnxcK71ZyL5xkkq9IKTKZG-3q6NnlJwuAFfYyuUQP1QrU_WCsAjIAkh_FXJDb_oPCr-CXx6eJz3ZweX0tstTRey0wQ1M=w122-h92-k-no",
+    "sources": [
+      "NYT",
+      "NYM"
+    ],
+    "nyt_rank": 101,
+    "nym_rank": 2,
+    "formatted_address": "186 Mott St.",
+    "website": "https://thaidiner.com",
+    "combined_order": 101
+  },
+  {
+    "rank": 102,
+    "name": "Third Falcon",
+    "rating": 4.5,
+    "review_count": 94,
+    "price_range": "$50–100",
+    "cuisine": "French",
+    "description": "Cozy Fort Greene restaurant with a concise, seasonal menu from an Eleven Madison Park alum.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipPRF5rhEs9aUXK_U_a66pN93gLrluGV3R-53aKF=w80-h100-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 102,
+    "combined_order": 102
+  },
+  {
+    "rank": 103,
+    "name": "Torrisi",
+    "rating": 4.5,
+    "review_count": 809,
+    "price_range": "$100+",
+    "cuisine": "Italian",
+    "description": "Stylish reincarnation of the groundbreaking restaurant that put the chef Rich Torrisi and Major Food Group on the map.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipOx1G10kPEmESfzbCDfva-7duN6Advzme1gt4FI=w137-h92-k-no",
+    "sources": [
+      "NYT",
+      "NYM"
+    ],
+    "nyt_rank": 103,
+    "nym_rank": 19,
+    "formatted_address": "275 Mulberry St.",
+    "website": "https://torrisinyc.com",
+    "combined_order": 103
+  },
+  {
+    "rank": 104,
+    "name": "Trinciti Roti Shop & Restaurant",
+    "rating": 4.4,
+    "review_count": 5485,
+    "price_range": "$10–20",
+    "cuisine": "Caribbean",
+    "description": "JFK-adjacent restaurant known for its doubles, aloo pie, curry goat and other Trinidadian specialties.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4noRO1eayRQaUoVDkPXvOZt3ZtLqvZjt85JVn2mINlws__PYU7XZMxlqpW4z6DzV7f2iYs98UWIxYzCVLxoUjWzYD6dD48UJ6MObV4LaKTgv8SDmJLPbR6tgNXvlvb0-sRb4pewvF837vQP2=w122-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 104,
+    "combined_order": 104
+  },
+  {
+    "name": "Sandro’s",
+    "sources": [
+      "NYM"
+    ],
+    "nym_rank": 4,
+    "formatted_address": "322 E. 86th St.",
+    "website": "https://sandrosrestaurant.com",
+    "description": "I’m not sure if Sandro’s is a great restaurant, as Gael Greene and Mimi Sheraton were proclaiming in the 1980s, but it’s a perfect one: warm, neighborhoody, and ready to offer, unbidden, homemade grissini. The food hasn’t kept up with the times and doesn’t need to: Amatriciana is smoky and admirably al dente, and a costoletta di citello is like a hot, salty veal potato chip, served with a tangle of arugula and, in the Italian style, a fried bone. On a recent night, one of Sandro’s kids was greeting regulars in Italian, but the atmosphere remained relaxed enough that a guy holding court in a Jets jersey was perfectly of the place.",
+    "rank": null,
+    "rating": null,
+    "review_count": null,
+    "price_range": null,
+    "cuisine": null,
+    "image_url": null,
+    "combined_order": 104
+  },
+  {
+    "rank": 105,
+    "name": "Txikito",
+    "rating": 4.4,
+    "review_count": 529,
+    "price_range": "$50–100",
+    "cuisine": "Spanish",
+    "description": "Insider-y Chelsea restaurant specializing in food from the Basque region of Spain.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipMXkD5GpFmoYBb-b7goXQmaA9XVRl3qiWWG4ni8=w138-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 105,
+    "combined_order": 105
+  },
+  {
+    "name": "The Modern",
+    "sources": [
+      "NYM"
+    ],
+    "nym_rank": 5,
+    "formatted_address": "9 W. 53rd St.",
+    "website": "https://themodernnyc.com",
+    "description": "The Modern waxes and wanes in food snobs’ fields of vision, though I’ve never seen the dining room or the adjoining barroom less than healthily full. While semi-professional clout diners can be distracted by newer, shinier objects, members of the Modern’s well-heeled clientele make their reservations with unbothered relief. Lucky them. Thomas Allan’s tasting menu is still executing at a high level, and the main dining room still provides unparalleled scenery (it overlooks the MoMA’s Philip Johnson–designed Abby Aldrich Rockefeller Sculpture Garden). This is a worthy special-occasion destination. My discerning mother-in-law cooed over a kind of trompe l’oeil lobster claw — scallops, draped in thin slices of kohlrabi and dusted with a mix of raspberry powder and espelette pepper. Roasted monkfish served with lemon-thyme sabayon, lobster bisque, and a scattering of perfect pumpkin dumplings gave me flutters. (In the more casual bar, kitschy fried chicken is Instagram bait of the highest order and, at $27, something of a bargain.)",
+    "rank": null,
+    "rating": null,
+    "review_count": null,
+    "price_range": null,
+    "cuisine": null,
+    "image_url": null,
+    "combined_order": 105
+  },
+  {
+    "rank": 106,
+    "name": "Una Pizza Napoletana",
+    "rating": 4.3,
+    "review_count": 836,
+    "price_range": "$30–50",
+    "cuisine": "Pizza",
+    "description": "Anthony Mangieri's temple to Neapolitan-style pizzas, open just three days a week.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipMyquLGZBfFOgsdSbXc8xaMWoXnaz8u-lYeptU-=w138-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 106,
+    "combined_order": 106
+  },
+  {
+    "name": "Asian Jewels",
+    "sources": [
+      "NYM"
+    ],
+    "nym_rank": 6,
+    "formatted_address": "133-30 39th Ave., Flushing",
+    "website": "https://asianjewelsny.com",
+    "description": "A preferred dim sum banquet hall is a required proof of residence in this city. There are fine options in Manhattan Chinatown and Sunset Park Chinatown (try East Harbor), but Asian Jewels in Flushing is my palace of choice. Convention sized with an enormous LED screen beaming over the dining room — you don’t want to eat shumai beneath an enormous image of a a gull-winged Pagani roadster? — Asian Jewels hits the dim sum pleasure centers. The place is an established classic enough to be easily navigated in either English or Cantonese, and while the waits can be long at prime times (late mornings on the weekend), I’ve never had to cool my heels too long. Carts maneuver around tight corners, their drivers hawking har gow and chicken feet. Turnip cakes, rice rolls (which can be filled, I learned on my last visit, with fried dough), shimmering little bowls of slippery tripe, classics all. Real durian is used in the durian puffs that end the meal.",
+    "rank": null,
+    "rating": null,
+    "review_count": null,
+    "price_range": null,
+    "cuisine": null,
+    "image_url": null,
+    "combined_order": 106
+  },
+  {
+    "rank": 107,
+    "name": "Via Carota",
+    "rating": 4.4,
+    "review_count": 3068,
+    "price_range": "$50–100",
+    "cuisine": "Italian",
+    "description": "Breezy West Village restaurant with celebrity clientele and a focus on seasonal Italian cuisine.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipPoJNFx-R5qUcIkecAWQbHpgVvFzLvJ7kqpsWAb=w80-h106-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 107,
+    "combined_order": 107
+  },
+  {
+    "name": "Zimmi’s",
+    "sources": [
+      "NYM"
+    ],
+    "nym_rank": 7,
+    "formatted_address": "72 Bedford St.",
+    "website": "https://zimmisnyc.com",
+    "description": "Chef Maxime Pradié has Gallic blood and a New York heart: He spent summers in the south of France, learning to cook at his grandmother’s stove, then trundled back in the fall to Brooklyn’s Poly Prep. Is that why this 37-seat French spot he runs with co-owner Jenni Guizio feels like the village restaurant you’d stumble into en vacances and brag about at home ever after? Pradié is a kind of country cousin to more urbane French chefs around town, though his foie-gras flecked artichoke soup would be equally at home at the fussiest fine-dining palaces. I’ve called his style “auberge cooking,” the cuisine of a country innkeeper, ethereal and rib-sticking at once. Guizio’s wine list (overseen by Cory Holt) goes deep on the often-neglected appellations of the South of France and the Pays d’Oc, and meals have only gotten better since pastry chef Clodagh Manning took over dessert.",
+    "rank": null,
+    "rating": null,
+    "review_count": null,
+    "price_range": null,
+    "cuisine": null,
+    "image_url": null,
+    "combined_order": 107
+  },
+  {
+    "rank": 108,
+    "name": "Village Cafe",
+    "rating": 4.4,
+    "review_count": 774,
+    "price_range": "$30–50",
+    "cuisine": "Azerbaijani restaurant",
+    "description": "South Brooklyn destination for plov (Azerbaijani rice pilaf) and other dishes.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipOqFjIeQltoBXAL6ouX_8tdJolGjhl4LusAQ1KD=w163-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 108,
+    "combined_order": 108
+  },
+  {
+    "name": "La Mercerie",
+    "sources": [
+      "NYM"
+    ],
+    "nym_rank": 8,
+    "formatted_address": "53 Howard St.",
+    "website": "https://lamercerieny.com",
+    "description": "The machers go to Daniel Rose’s expense-account-required Le Coucou for quenelles de brochet and côtes de veau; I prefer his wife Marie-Aude Rose’s La Mercerie nearby. Housed in the high-end Roman & Williams Guild store — gorgeously appointed, atmospherically dreamy, and fully shoppable, it’s like an American Girl Doll Café for renovation-minded adults — La Mercerie could easily have gone long on ambience and forgotten the food. It doesn’t. Chef Heloïse Fischbach is now in the kitchen, but Rose remains involved as well, even as original operator Stephen Starr recently announced he was parting ways with the restaurant. Here’s hoping it stays exactly as-is. The pastry is fully up to Parisian standards, the all-French wine list interesting and not punishing. I defy anyone to find a better bouillabaisse in a sofa shop.",
+    "rank": null,
+    "rating": null,
+    "review_count": null,
+    "price_range": null,
+    "cuisine": null,
+    "image_url": null,
+    "combined_order": 108
+  },
+  {
+    "rank": 109,
+    "name": "White Bear",
+    "rating": 4.3,
+    "review_count": 903,
+    "price_range": "$1–10",
+    "cuisine": "Dumpling",
+    "description": "Walk-up window for affordable bites, including pork wontons with chile oil.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nq1OM4K1isKeRv7X5LKWhAvknZMX80XTjXpZNPukca2_ZU8HxRpv6uPPQUWkpo65zkUw5z2Jk4N07JIJwhiZoGfcxXiEMzuumO6Cijf00pOgESXDp2XbonTGGLgGOytVvYjqVhOKZLHBoA=w122-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 109,
+    "combined_order": 109
+  },
+  {
+    "name": "Angel",
+    "sources": [
+      "NYM"
+    ],
+    "nym_rank": 9,
+    "formatted_address": "75-18 37th Ave., Jackson Heights",
+    "website": "https://angelindianrestaurant.com",
+    "description": "Many excellent new Indian spots focus on the country’s south. Angel — which opened in 2019 in a takeout shop and moved to a bigger space this year — heads north to Punjab where chef Amrit Pal Singh was born. Saag paneer is soft crumbling clouds of fresh cheese in rich brown gravy strewn with actual greens, not a puree. Vegetarian dum biryani steams under its spiced dome of stretchy, crunchy bread. I loved an appetizer of tender lamb chops spackled with ginger paste, but I could have easily done without them: Much of the menu is vegetarian (and all halal), a rare one where meat wouldn’t be missed.",
+    "rank": null,
+    "rating": null,
+    "review_count": null,
+    "price_range": null,
+    "cuisine": null,
+    "image_url": null,
+    "combined_order": 109
+  },
+  {
+    "rank": 110,
+    "name": "Yoon Haeundae Galbi",
+    "rating": 4.5,
+    "review_count": 1221,
+    "price_range": "$50–100",
+    "cuisine": "Korean BBQ",
+    "description": "Korean barbecue restaurant best known for its “Haeundae cut” short rib.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipPZ2qVv8Lnj7HWO4g5bOoAprRrNFVZs-XYlhURC=w137-h92-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 110,
+    "combined_order": 110
+  },
+  {
+    "rank": 111,
+    "name": "ZAAB ZAAB",
+    "rating": 4.3,
+    "review_count": 306,
+    "price_range": "$30–50",
+    "cuisine": "Thai",
+    "description": "Original location of a mini-chain of restaurants serving fiery Isan-style Thai cooking with a focus on seafood.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4noNU6sUUNbdtHlrF4vZL62ZwATx38syiTjtaOrTZx9LSJ5V6RlhG5LPW2fzVGREEuYnP-uw2IkcvXOBibrYg4vSNWbM8i8bbhQrk1T3TYGAZtaY-hj039cfgnD0ntgp4Mdrwf3-=w80-h106-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 111,
+    "combined_order": 111
+  },
+  {
+    "rank": 112,
+    "name": "Zaab Zaab",
+    "rating": 4.2,
+    "review_count": 224,
+    "price_range": "$30–50",
+    "cuisine": "Thai",
+    "description": "Brooklyn location of a mini-chain of restaurants serving fiery Isan-style Thai cooking with a focus on seafood.",
+    "image_url": "https://lh3.googleusercontent.com/p/AF1QipPxmipd6xKS8ufoJSSxd8Eh_1cU4Rz2nuxgIT1_=w80-h106-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 112,
+    "combined_order": 112
+  },
+  {
+    "rank": 113,
+    "name": "Zaab Zaab",
+    "rating": 3.4,
+    "review_count": 40,
+    "price_range": "$10–20",
+    "cuisine": "Restaurant",
+    "description": "Manhattan location of a mini-chain of restaurants serving fiery Isan-style Thai cooking with a focus on seafood.",
+    "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrOkcEKnhrWUN2Lr3kaPVU_qm_vF96lwvNfraqzrdamLoxVc77D60N1ygN7-G4b0JpQ3VPeWwwc1SfNZUK7_wCxSrqP9NRl0100cinPjX4mNE3tbw26jrZ46JiVocpvgmHndlpFQAWFwjZU=w80-h123-k-no",
+    "sources": [
+      "NYT"
+    ],
+    "nyt_rank": 113,
+    "combined_order": 113
+  },
+  {
+    "name": "Taverna Kyclades",
+    "sources": [
+      "NYM"
+    ],
+    "nym_rank": 13,
+    "formatted_address": "01 Ditmars Blvd., Astoria",
+    "website": "https://tavernakyclades.com",
+    "description": "The wait can be an hour long even on a rainy, random Monday: proof that the locals haven’t abandoned this Astoria original. Sure, an East Village location has come and gone (Bayside remains), but the Greeks I know agree. This is as close an approximation of an island taverna as you’re likely to find in the boroughs. Whole fish, grilled to sooty blackness and tender oil-soaked richness as they are at any chora, is as good as you’ll find at the five-star Greek Republican fat-cat restaurants of Manhattan, and the lemon potatoes are as bright as Yiayia’s. 36-",
+    "rank": null,
+    "rating": null,
+    "review_count": null,
+    "price_range": null,
+    "cuisine": null,
+    "image_url": null,
+    "combined_order": 113
+  },
+  {
+    "name": "Coppelia",
+    "sources": [
+      "NYM"
+    ],
+    "nym_rank": 16,
+    "formatted_address": "207 W. 14th St.",
+    "website": "https://ilovecoppelia.com",
+    "description": "It’s an article of faith with me that New York must have 24-hour spots. Julian Medina’s Pan-Latin diner is a true all-nighter. There’s breakfast all day (and all night), booze-sopping mains (fried chicken, ropa vieja), along with empanadas and hot sandwiches. I prefer the classic empanadas to the oxtail, and the lesser-known Medianoche sandwich (roast pork, ham, Swiss, pickles and garlic mojo on brioche) to the canonical Cubano, but in the vicinity of dawn, there are no bad choices.",
+    "rank": null,
+    "rating": null,
+    "review_count": null,
+    "price_range": null,
+    "cuisine": null,
+    "image_url": null,
+    "combined_order": 116
+  },
+  {
+    "name": "Maxi’s Noodle",
+    "sources": [
+      "NYM"
+    ],
+    "nym_rank": 17,
+    "formatted_address": "Multiple locations",
+    "website": "https://maxisnoodle.com",
+    "description": "If you’re going to leave your corporate job and dedicate yourself to wontons, they better be damn good wontons. Maxi Lau’s are. Filled to nearly bursting with big meaty hunks of tender shrimp and just enough pork to keep things interesting (a 90-10 mix, Lau says), they’re among the best bargains in New York — something the city’s many purveyors of $30 shrimp cocktail might like to keep in mind. Hong Kong-style noodle soup is the thing here, with broth so lip-smackingly rich with pork bones that it’ll smooth your lips. With an optional thatch of duck-egg noodles on top, a meal comes in at under $20, including a very generous tip.",
+    "rank": null,
+    "rating": null,
+    "review_count": null,
+    "price_range": null,
+    "cuisine": null,
+    "image_url": null,
+    "combined_order": 117
+  },
+  {
+    "name": "I Sodi",
+    "sources": [
+      "NYM"
+    ],
+    "nym_rank": 21,
+    "formatted_address": "314 Bleecker St.",
+    "website": "https://isodinyc.com",
+    "description": "Neither undersubscribed nor unknown, I Sodi nevertheless lives in the shadow of Via Carota. The recent move to bigger digs dinged the Tuscan-garret charm of Rita Sodi’s original slightly (and hasn’t made the fight for a table that much easier), but the food remains bulletproof. Tagliatelle with a cucina povera sauce of caramelized onion and Parmesan is sweet, bitter, and barny, arriving steaming and glossy as so few pastas do. The lasagna triumphs over anyone else’s.",
+    "rank": null,
+    "rating": null,
+    "review_count": null,
+    "price_range": null,
+    "cuisine": null,
+    "image_url": null,
+    "combined_order": 121
+  },
+  {
+    "name": "Le French Diner",
+    "sources": [
+      "NYM"
+    ],
+    "nym_rank": 23,
+    "formatted_address": "188 Orchard St.",
+    "website": "https://instagram.com/lefrenchdiner",
+    "description": "Le French Diner boasts the shortest perceived distance between customer and stove that I’ve seen in my years of dining out. Wear a too-heavy sweater and you’ll sauna yourself. The tiny alcove is nominally on Orchard Street (there’s an Equinox next door), but once you’re inside, it’s Marais as far as the eye can see. One cook runs the entire station, about the size of an airplane bathroom, turning out classics like rounds of escargots, grilled octopus with aïoli, and no-nonsense hanger steak. If the wine is a little too warm or a little too cold, it’s nevertheless glugged out to the rim of each glass. Can the service be a little gruff? Can the quarters be a little tight? Is the mustardy steak tartare chopped coarser than you’ll find elsewhere and served in a cereal bowl? Oui, oui, and oui, but if Le French Diner were “better,” it’d be worse. The proof is every other chef in town loves it here.",
+    "rank": null,
+    "rating": null,
+    "review_count": null,
+    "price_range": null,
+    "cuisine": null,
+    "image_url": null,
+    "combined_order": 123
+  },
+  {
+    "name": "Taqueria Ramírez",
+    "sources": [
+      "NYM"
+    ],
+    "nym_rank": 24,
+    "formatted_address": "94 Franklin St., Greenpoint",
+    "website": "https://taqueriaramirezbk.com",
+    "description": "This city’s reputation as a Mexican-food desert has passed, thanks in part to Taqueria Ramírez where the usual cuts are supplanted by Mexican favorites, like suadero, an underused muscle near the rib, slow-cooked and then butchered into a creamy, mild mince by a cook wielding a curved cleaver. There are beef intestines — almost too yielding, sopping up plenty of fat before being torched with a butane canister — and a single vegetarian option, nopales, though strict meat-avoiders may want to give Ramirez a pass. “All may contain lard,” the menu warns, and the option of adding chicharrónes to the nopal taco in particular seems like a good move. I especially like the barky, fatty, crispy (pork) pastor, which revolves on the largest trompo I’ve ever seen, like an oblong planet, waiting to be slashed off and piled taco high. On Tuesdays, the restaurant offers a special born in Mexico but with an eye to U.S. fans: gringa al pastor, shards of pastor pork and melty cheese sandwiched between two tortillas, quesadilla-style.",
+    "rank": null,
+    "rating": null,
+    "review_count": null,
+    "price_range": null,
+    "cuisine": null,
+    "image_url": null,
+    "combined_order": 124
+  },
+  {
+    "name": "Quique Crudo",
+    "sources": [
+      "NYM"
+    ],
+    "nym_rank": 25,
+    "formatted_address": "27 Bedford St.",
+    "website": "https://quiquecrudonyc.com",
+    "description": "Chef Cosme Aguilar’s entrée into Manhattan (after his successful Casa Enrique in Long Island City) reminds me of a place Samantha Jones would’ve loved: The drinks are strong and various (the house Cosmo, made with mezcal, is very Sexo y la Ciudad), the small menu’s aguachiles and ceviches aphrodisiacally suggestive, and the space sleek, chic, and crowded. A crab tostada is a deconstructed crabcake, the stuffing removed. Unexpected soy adds umami depth to aguachile of shrimp with cucumber. And do try the mar y tierra, surf ‘n’ turf: one perfect scallop, seared hard but still tender, on a creamy bed of loosely crumble chorizo and a scattering of cashews.",
+    "rank": null,
+    "rating": null,
+    "review_count": null,
+    "price_range": null,
+    "cuisine": null,
+    "image_url": null,
+    "combined_order": 125
+  },
+  {
+    "name": "Lungi",
+    "sources": [
+      "NYM"
+    ],
+    "nym_rank": 31,
+    "formatted_address": "1136 First Ave.",
+    "website": "https://lungirestaurant.com",
+    "description": "With all due respect to Staten Island’s Lakruwana, the best Sri Lankan food I had this year was at Lungi in an uninspiring space — two parallel chambers, long and deep — on an uninspiring Upper East Side stretch. The location may be standard issue, but the food is not. Lungi’s hoppers, bowl-shaped rice-flour and coconut milk pancakes, were solid, and the curries (chicken, good; goat, better) and sambols are superior still. Dream parotas: lacy, crispy, shredding into themselves. “This is like if you flattened a croissant,” I once heard a customer remark. “Dude, this is what the croissant is inspired by,” his friend replied.",
+    "rank": null,
+    "rating": null,
+    "review_count": null,
+    "price_range": null,
+    "cuisine": null,
+    "image_url": null,
+    "combined_order": 131
+  },
+  {
+    "name": "Kanyakumari",
+    "sources": [
+      "NYM"
+    ],
+    "nym_rank": 33,
+    "formatted_address": "20 E. 17th St.",
+    "website": "https://kanyakumarinyc.com",
+    "description": "A surfeit of polish can be a cause for concern. A sign on the wall glows a little garishly, and the furnishings feel mix-and-match: “This really heightens the authenticity,” an Indian friend I’d brought said. “I feel like I’m in India now.” Kanyakumari’s food ranges up the Southwest Indian coast. My favorites are crab sukka from Tamil Nadu to be attacked with gloved hands, and Malabar beef rich with coconut and onion.",
+    "rank": null,
+    "rating": null,
+    "review_count": null,
+    "price_range": null,
+    "cuisine": null,
+    "image_url": null,
+    "combined_order": 133
+  },
+  {
+    "name": "Mitsuru",
+    "sources": [
+      "NYM"
+    ],
+    "nym_rank": 35,
+    "formatted_address": "149 W. 4th St.",
+    "website": "https://mitsurunyc.com",
+    "description": "More important than having a go-to omakase heaven is maintaining a great Wednesday-night option, something decently priced and uncommonly good. That place is Mitsuru. Fish is in the hands of Mitsuru Tamura, who for years plied his trade at Sushi Yasuda, one of the best of the midtown power-lunch sushiyas. The selection is familiar and well handled: toro hand rolls with pickled daikon, hamachi and scallion, freshwater eel, Nobu-style miso black cod, very good tempura-fried sea bass. For a medium-big night, Tamura’s omakase counter awaits you for a comparatively reasonable $175, but any given weeknight, I’ve been very happy at a table, drinking up the atmosphere with a five-piece selection of “Mitsuru’s choice” sushi, a seaweed salad, and a few pops of chicken kara-age.",
+    "rank": null,
+    "rating": null,
+    "review_count": null,
+    "price_range": null,
+    "cuisine": null,
+    "image_url": null,
+    "combined_order": 135
+  },
+  {
+    "name": "B&H Dairy",
+    "sources": [
+      "NYM"
+    ],
+    "nym_rank": 36,
+    "formatted_address": "127 Second Ave.",
+    "website": "https://bandhdairykosher.com",
+    "description": "When lower Second Avenue was still Jewish Broadway — the Yiddish theater walk of fame is still visible outside the old Second Avenue Deli on 10th Stree — B&H was there. “Second Avenue had everything,” Abe Bergson (the B in B&H) recorded in his journal, not only the theaters but burlesque, movie houses, tuxedo shops, and restaurants. Ratner’s, Rappaport’s, Moskowitz & Lupowitz: Of them all, B&H alone is still here, and it’s still a well-patinated, not especially comfortable gangplank of counter and a few tables. There’s nowhere I’d rather have a tuna melt on thick-cut house-baked challah with a side of knish mit gravy and a can of Dr. Brown’s Diet Black Cherry. Customers can still kibitz with the countermen, even if they seem a little less Jewish than their predecessors.",
+    "rank": null,
+    "rating": null,
+    "review_count": null,
+    "price_range": null,
+    "cuisine": null,
+    "image_url": null,
+    "combined_order": 136
+  },
+  {
+    "name": "Bánh Anh Em",
+    "sources": [
+      "NYM"
+    ],
+    "nym_rank": 37,
+    "formatted_address": "99 Third Ave.",
+    "website": "https://bananhem.com",
+    "description": "It’s been a great year for Vietnamese cooking in New York, provided you don’t mind a crowd. By now, any regular restaurantgoer knows that Ha’s Snack Bar is excellent. Its popularity and small space mean seats remain scarce. Lines formed at Bánh Anh Em the day it opened, too, and they haven’t died down, though with faster turnover, a larger room, and the option of takeout, things move more quickly here. No matter the queue, the rewards at the end are great: little puff-pastry hot pockets stuffed with pork and pâté, phos, fry-your-own catfish. It’s the bánh mìs I dream of, unimpeachable combinations of pork belly, cold cuts, mustard greens, chiles, and yet more pâté on homemade rolls, crowned if you’re lucky with pork floss.",
+    "rank": null,
+    "rating": null,
+    "review_count": null,
+    "price_range": null,
+    "cuisine": null,
+    "image_url": null,
+    "combined_order": 137
+  },
+  {
+    "name": "YongChuan",
+    "sources": [
+      "NYM"
+    ],
+    "nym_rank": 38,
+    "formatted_address": "90 Clinton St.",
+    "website": "https://yongchuannyc.com",
+    "description": "There are two types of people: Those who know YongChuan and love it, and those who have never heard of it. The Sichuan-Ningbonese restaurant sits right off the on ramp to the Williamsburg Bridge, though it maintains a quiet serenity. Sichuan dishes are superlative examples of longtime favorites; the Ningbonese specialties, from China’s eastern coast, where seafood is the star, are rare to find on these shores. Smoked fish is served cold in sweet and sour sauce. Braised bass with green sprigs of rattan peppercorns. And on my last visit I was jealous of the whole croaker — golden skinned and served with thumb-size rice cakes in curry-colored broth — being served to a couple next to me.",
+    "rank": null,
+    "rating": null,
+    "review_count": null,
+    "price_range": null,
+    "cuisine": null,
+    "image_url": null,
+    "combined_order": 138
+  },
+  {
+    "name": "Meju",
+    "sources": [
+      "NYM"
+    ],
+    "nym_rank": 39,
+    "formatted_address": "5-28 49th Ave., Long Island city",
+    "website": "https://mejunyc.com",
+    "description": "Dinner at this tasting counter starts with a sermon: “We’re a fermentation restaurant,” chef Hooni Kim announces. “You will be ingesting lots of probiotics tonight.” His aim at Meju is to exploit the stomach-soothing possibilities of Korea’s fermentation-centric cuisine, starting from its (essentially) mother sauces: doenjiang (fermented soybean paste), gochujang (fermented chile paste), gamjiang (fermented soy sauce). Tending to one’s own gut flora may be tediously fashionable, but Kim is a convincing proselytizer. The meal builds a slow delicious case — gochujang dotted on top of raw sea perch, pork belly with 15-month kimchee — until Kim dabs everyone’s hand with a precious taste of 130-year-old soy sauce. It’s rich and viscous, with a figgy sweetness and the mouthfeel of aged Amarone.",
+    "rank": null,
+    "rating": null,
+    "review_count": null,
+    "price_range": null,
+    "cuisine": null,
+    "image_url": null,
+    "combined_order": 139
+  },
+  {
+    "name": "F&F",
+    "sources": [
+      "NYM"
+    ],
+    "nym_rank": 40,
+    "formatted_address": "459 Court St., Carroll Gardens",
+    "website": "https://fnfpizzeria.com",
+    "description": "Frank Falcinelli and Frank Castronovo were two decades into their restaurant partnership before they opened a pizzeria next to their Frankie’s Spuntino flagship. They nailed it. Pies hit a kind of best-of-both-worlds middle ground between artisanal Neapolitan (blistered with thin-skinned charred bubbles and topped with Bianco tomatoes) and New York City’s own floppy folding-slice terroir. F&F 1.0 proved so popular that the Franks retrofitted a next-door restaurant into an eat-in F&F restaurant, but for reasons unclear, the pizzas there are never quite as good as what you order at the counter or the pies they’ll dispatch to your door. The Partanna (with red onions and honey) gets a lot of love, and there’s a time and a place for sausage and broccoli rabe, but for my delivery dollar, the way to go is half-plain-half-pep, with a lavish but not overwhelming scattering of blistered little pepperoni cups. Their clam pie, with mozzarella, parm, bread crumbs, and parsley, isn’t Pepe’s New Haven classic, but it justifies its price if you’ve got $50 to spare, and arrives at your door with its own little cup of lemon wedges.",
+    "rank": null,
+    "rating": null,
+    "review_count": null,
+    "price_range": null,
+    "cuisine": null,
+    "image_url": null,
+    "combined_order": 140
+  }
+]
